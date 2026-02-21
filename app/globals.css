@@ -12,8 +12,8 @@
   --foreground: #f5f5f7;
   --background: #0b0b0f;
   --background-gradient:
-    radial-gradient(circle at 15% 20%, #1a1f2b 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, #1a1325 0%, transparent 40%),
+    radial-gradient(circle at 15% 20%, #050608 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, #120a1f 0%, transparent 40%),
     linear-gradient(180deg, #0b0b0f 0%, #0a0a0a 100%);
 }
 
@@ -42,4 +42,3 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
-
