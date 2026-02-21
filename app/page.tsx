@@ -1,6 +1,5 @@
-/**
- * Splash — à venir.
- */
+import { Splash } from '@/features/splash/Splash';
+
 export default function SplashPage() {
-  return null;
+  return <Splash />;
 }

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Geist_Mono, Syne } from 'next/font/google';
 import { t } from '@/lib/i18n/i18n';
 import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
-import { Header } from '@/components/header/header';
 import './globals.css';
 
 const syne = Syne({
@@ -34,13 +33,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocaleFromRequest();
-
   return (
     <html lang="fr" className="dark">
-      <body className={`${syne.variable} ${geistMono.variable} flex flex-col antialiased`}>
-        <Header locale={locale} />
-        <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
+      <body
+        className={`${syne.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
+      >
+        {children}
       </body>
     </html>
   );
