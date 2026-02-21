@@ -108,7 +108,6 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
             );
           })}
         </nav>
-        <div className="border-b border-foreground/20" />
         <div className="flex items-center justify-center gap-6 py-6">
           {LOCALES.map(({ value, label }) => {
             const isActive = value === locale;
