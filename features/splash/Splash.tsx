@@ -8,7 +8,7 @@ import { logoNav } from '@/components/navigation/navigation-item/navigation-item
 import { profileImagesTop } from '@/lib/images/profile/profile';
 
 /**
- * Splash — image (object-contain) + overlay dark + zoom centré sur le point rouge, puis logo.
+ * Splash — image object-cover + overlay + zoom centré sur le point, puis logo.
  */
 export function Splash() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -51,15 +51,15 @@ export function Splash() {
           src={profileImagesTop.src}
           alt=""
           fill
-          className="object-contain object-center grayscale"
+          className="object-cover grayscale lg:object-[10%_10%] md:object-[15%_15%]"
           priority
           sizes="100vw"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-black/50" aria-hidden />
       <span
-        ref={dotRef}
-        className="absolute left-[52.5%] md:left-[51.5%] lg:left-[51%] top-[28.6%] min-[375px]:top-[23.5%] z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 "
+        //ref={dotRef}
+        className="absolute left-[53%] top-[23.6%] md:top-[25.5%] lg:top-[48%] min-[2560px]:top-[32%] z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500"
         aria-hidden
       />
       {showLogo && <SplashLogo text={logoNav.label} />}
