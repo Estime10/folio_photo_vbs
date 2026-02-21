@@ -5,9 +5,10 @@ import gsap from 'gsap';
 
 type SplashLogoProps = {
   text: string;
+  onAnimationComplete?: () => void;
 };
 
-export function SplashLogo({ text }: SplashLogoProps) {
+export function SplashLogo({ text, onAnimationComplete }: SplashLogoProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +17,9 @@ export function SplashLogo({ text }: SplashLogoProps) {
 
     gsap.set(el, { opacity: 0, y: 120 });
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: () => onAnimationComplete?.(),
+    });
     tl.to(el, {
       y: 0,
       duration: 1.2,
@@ -30,7 +33,7 @@ export function SplashLogo({ text }: SplashLogoProps) {
       },
       0
     );
-  }, []);
+  }, [onAnimationComplete]);
 
   return (
     <div
