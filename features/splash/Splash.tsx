@@ -7,7 +7,7 @@ import { SplashLogo } from '@/features/splash/SplashLogo';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 
 /**
- * Splash — image + zoom centré sur le point, puis texte PHOTO VIBES BY SHANA (fade up + opacity).
+ * Splash — image plein écran + zoom centré sur le point, puis logo (fade up + opacity).
  */
 export function Splash() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ export function Splash() {
       transformOrigin: `${originX}px ${originY}px`,
     });
     gsap.to(wrapper, {
-      scale: 20,
+      scale: 19,
       duration: 4,
       delay: 3,
       ease: 'power2.out',
