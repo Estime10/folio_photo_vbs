@@ -11,7 +11,9 @@ type ContainerProps = {
  */
 export function Container({ children, className }: ContainerProps) {
   return (
-    <div className={`h-full w-full overflow-y-auto px-5.5 pt-5.5 ${className ?? ''}`.trim()}>
+    <div
+      className={`h-full w-full overflow-y-auto px-(--container-padding-x) pt-5.5 ${className ?? ''}`.trim()}
+    >
       {children}
     </div>
   );
