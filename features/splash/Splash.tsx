@@ -1,52 +1,66 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { SplashLogo } from '@/features/splash/SplashLogo';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 
 /**
- * Splash — logo qui remonte, puis flash plein écran, puis redirect /home.
+ * Splash — image + zoom centré sur le point, puis texte PHOTO VIBES BY SHANA (fade up + opacity).
  */
 export function Splash() {
-  const router = useRouter();
-  const [phase, setPhase] = useState<'logo' | 'flash'>('logo');
-  const flashRef = useRef<HTMLDivElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLSpanElement>(null);
+  const [showLogo, setShowLogo] = useState(false);
 
-  const handleLogoComplete = useCallback(() => {
-    setPhase('flash');
+  const handleZoomComplete = useCallback(() => {
+    setShowLogo(true);
   }, []);
 
   useEffect(() => {
-    if (phase !== 'flash' || !flashRef.current) return;
+    const wrapper = imageWrapperRef.current;
+    const dot = dotRef.current;
+    if (!wrapper || !dot) return;
 
-    const el = flashRef.current;
-    gsap.set(el, { opacity: 0 });
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const dotRect = dot.getBoundingClientRect();
+    const originX = dotRect.left - wrapperRect.left + dotRect.width / 2;
+    const originY = dotRect.top - wrapperRect.top + dotRect.height / 2;
 
-    const tl = gsap.timeline({
-      onComplete: () => router.push('/home'),
+    gsap.set(wrapper, {
+      transformOrigin: `${originX}px ${originY}px`,
     });
-    tl.to(el, { opacity: 0.85, duration: 0.08, ease: 'power2.out' }).to(el, {
-      opacity: 0,
-      duration: 0.35,
-      ease: 'power2.in',
+    gsap.to(wrapper, {
+      scale: 20,
+      duration: 4,
+      delay: 3,
+      ease: 'power2.out',
     });
-  }, [phase, router]);
+
+    const logoDelayMs = (3 + 4 - 1.5) * 1000;
+    const logoTimer = setTimeout(handleZoomComplete, logoDelayMs);
+    return () => clearTimeout(logoTimer);
+  }, [handleZoomComplete]);
 
   return (
-    <>
-      <div className="min-h-[100dvh] w-full flex-1 bg-black" />
-      {phase === 'logo' && (
-        <SplashLogo text={logoNav.label} onAnimationComplete={handleLogoComplete} />
-      )}
-      {phase === 'flash' && (
-        <div
-          ref={flashRef}
-          className="pointer-events-none fixed inset-0 z-30 bg-white"
-          aria-hidden
+    <div className="relative min-h-[100dvh] w-full flex-1 overflow-hidden bg-black">
+      <div ref={imageWrapperRef} className="absolute inset-0">
+        <Image
+          src="/images/profile/profile.jpeg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
         />
-      )}
-    </>
+      </div>
+      <span
+        ref={dotRef}
+        className="absolute top-[55%] right-[calc(var(--spacing)*59)] z-10 h-3 w-3 rounded-full bg-transparent"
+        aria-hidden
+      />
+      {showLogo && <SplashLogo text={logoNav.label} />}
+    </div>
   );
 }

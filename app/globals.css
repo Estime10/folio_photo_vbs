@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 :root {
+  /** Unité d’espacement (ex. calc(var(--spacing) * 59) pour le point splash). */
+  --spacing: 0.25rem;
   /** Hauteur du header (zone cliquable). Avec safe-area pour le total : var(--header-total-height) */
   --header-height: 4rem;
   /** Hauteur totale header = safe-area top + header (pour calc type min-height: calc(100dvh - var(--header-total-height))) */
