@@ -1,7 +1,7 @@
 /** Routes de l'application (une seule source de vérité). */
 export const ROUTES = {
   home: '/home',
-  about: '/about',
+  story: '/story',
   gallery: '/gallery',
   contact: '/contact',
 } as const;

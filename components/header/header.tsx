@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 import { Navigation } from '@/components/navigation/navigation';
@@ -16,7 +15,7 @@ export function Header({ locale }: HeaderProps) {
         href={logoNav.href}
         className="text-sm font-medium uppercase tracking-wide text-foreground md:text-lg"
       >
-        {t(logoNav.titleKey, locale)}
+        {logoNav.label}
       </Link>
       <div className="flex justify-end xl:justify-center">
         <Navigation locale={locale} />
