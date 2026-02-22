@@ -38,10 +38,10 @@ export function SplashLogo({ text, onAnimationComplete }: SplashLogoProps) {
   return (
     <div
       ref={ref}
-      className="fixed inset-0 z-20 flex items-center justify-center pointer-events-none"
+      className="pointer-events-none fixed inset-0 z-20 flex items-center justify-center"
       aria-hidden
     >
-      <span className="font-medium tracking-tight text-white text-center px-4 whitespace-nowrap text-2xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl uppercase">
+      <span className="whitespace-nowrap px-4 text-center text-2xl font-medium uppercase tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
         {text}
       </span>
     </div>

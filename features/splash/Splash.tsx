@@ -2,47 +2,34 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
-import gsap from 'gsap';
-import { SplashLogo } from '@/features/splash/SplashLogo';
+import { SplashLogo } from '@/components/animations/splash-logo/splash-logo';
+import { useSplashZoom } from '@/components/animations/splash-zoom/use-splash-zoom';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 import { profileImagesBg } from '@/lib/images/profile/profile';
 
-/**
- * Splash — image object-cover + overlay + zoom centré sur le point, puis logo.
- */
+const ZOOM_DELAY_S = 3;
+const ZOOM_DURATION_S = 8;
+const LOGO_SHOW_BEFORE_END_S = 1.5;
+
 export function Splash() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLSpanElement>(null);
   const [showLogo, setShowLogo] = useState(false);
 
-  const handleZoomComplete = useCallback(() => {
-    setShowLogo(true);
-  }, []);
+  useSplashZoom({
+    wrapperRef: imageWrapperRef,
+    dotRef,
+    delay: ZOOM_DELAY_S,
+    duration: ZOOM_DURATION_S,
+  });
+
+  const handleZoomComplete = useCallback(() => setShowLogo(true), []);
+  const logoDelayMs = (ZOOM_DELAY_S + ZOOM_DURATION_S - LOGO_SHOW_BEFORE_END_S) * 1000;
 
   useEffect(() => {
-    const wrapper = imageWrapperRef.current;
-    const dot = dotRef.current;
-    if (!wrapper || !dot) return;
-
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const dotRect = dot.getBoundingClientRect();
-    const originX = dotRect.left - wrapperRect.left + dotRect.width / 2;
-    const originY = dotRect.top - wrapperRect.top + dotRect.height / 2;
-
-    gsap.set(wrapper, {
-      transformOrigin: `${originX}px ${originY}px`,
-    });
-    gsap.to(wrapper, {
-      scale: 100,
-      duration: 8,
-      delay: 3,
-      ease: 'power2.in',
-    });
-
-    const logoDelayMs = (3 + 8 - 1.5) * 1000;
-    const logoTimer = setTimeout(handleZoomComplete, logoDelayMs);
-    return () => clearTimeout(logoTimer);
-  }, [handleZoomComplete]);
+    const t = setTimeout(handleZoomComplete, logoDelayMs);
+    return () => clearTimeout(t);
+  }, [handleZoomComplete, logoDelayMs]);
 
   return (
     <div className="relative min-h-100dvh w-full flex-1 overflow-hidden">
