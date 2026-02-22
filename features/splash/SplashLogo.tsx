@@ -41,7 +41,7 @@ export function SplashLogo({ text, onAnimationComplete }: SplashLogoProps) {
       className="fixed inset-0 z-20 flex items-center justify-center pointer-events-none"
       aria-hidden
     >
-      <span className="font-medium tracking-tight text-white text-center px-4 whitespace-nowrap text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl uppercase">
+      <span className="font-medium tracking-tight text-white text-center px-4 whitespace-nowrap text-2xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl uppercase">
         {text}
       </span>
     </div>

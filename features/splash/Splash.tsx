@@ -5,7 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { SplashLogo } from '@/features/splash/SplashLogo';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
-import { profileImagesTop } from '@/lib/images/profile/profile';
+import { profileImagesBg } from '@/lib/images/profile/profile';
 
 /**
  * Splash — image object-cover + overlay + zoom centré sur le point, puis logo.
@@ -45,21 +45,21 @@ export function Splash() {
   }, [handleZoomComplete]);
 
   return (
-    <div className="relative min-h-[100dvh] w-full flex-1 overflow-hidden bg-black">
-      <div ref={imageWrapperRef} className="absolute inset-0">
+    <div className="relative min-h-100dvh w-full flex-1 overflow-hidden">
+      <div ref={imageWrapperRef} className="absolute inset-0 grayscale">
         <Image
-          src={profileImagesTop.src}
+          src={profileImagesBg.src}
           alt=""
           fill
-          className="object-cover grayscale lg:object-[10%_10%] md:object-[15%_15%]"
+          className="object-cover lg:object-[10%_10%] md:object-[15%_15%]"
           priority
           sizes="100vw"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-black/50" aria-hidden />
       <span
-        //ref={dotRef}
-        className="absolute left-[53%] top-[23.6%] md:top-[25.5%] lg:top-[48%] min-[2560px]:top-[32%] z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500"
+        ref={dotRef}
+        className="absolute left-[53%] top-[23.6%] md:top-[25.5%] lg:top-[25%] xl:top-[44%] 2xl:top-[46.5%] z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2"
         aria-hidden
       />
       {showLogo && <SplashLogo text={logoNav.label} />}

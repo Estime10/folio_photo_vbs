@@ -3,6 +3,7 @@ import type { PortfolioImage } from '@/types/portfolio';
 const PROFILE_FILE = 'profile.jpeg' as const;
 const PROFILE_FILE_TOP = 'profile_top.jpg' as const;
 const PROFILE_FILE_NO_BG = 'profile_no_bg.png' as const;
+export const PROFILE_FILE_BG = 'DSC_0399.jpg' as const;
 
 const BASE = '/images/profile';
 
@@ -19,4 +20,9 @@ export const profileImagesTop: PortfolioImage = {
 export const profileImagesNoBg: PortfolioImage = {
   src: `${BASE}/${PROFILE_FILE_NO_BG}`,
   name: PROFILE_FILE_NO_BG,
+};
+
+export const profileImagesBg: PortfolioImage = {
+  src: `${BASE}/${PROFILE_FILE_BG}`,
+  name: PROFILE_FILE_BG,
 };
