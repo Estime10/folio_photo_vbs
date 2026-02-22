@@ -10,5 +10,12 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const locale = await getLocaleFromRequest();
-  return <Home title={t('home.hero.title', locale)} />;
+  return (
+    <Home
+      title={t('home.hero.title', locale)}
+      tagline={t('home.hero.tagline', locale)}
+      ctaGalleryLabel={t('home.hero.cta.gallery', locale)}
+      ctaContactLabel={t('home.hero.cta.contact', locale)}
+    />
+  );
 }

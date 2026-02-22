@@ -11,7 +11,11 @@ export const fr = {
   'nav.close': 'Fermer',
   'home.title': 'Portfolio',
   'home.subtitle': 'Photographie',
-  'home.hero.title': 'Photo Vibes By Shana',
+  'home.hero.title': 'Entre lumière,\nsilence et émotion',
+  'home.hero.tagline':
+    "Là où la lumière révèle l'invisible\net où chaque silence devient une mémoire intemporelle.",
+  'home.hero.cta.gallery': 'Voir la galerie',
+  'home.hero.cta.contact': 'Me contacter',
   'meta.title': 'Portfolio Photo',
   'meta.description': 'Portfolio photographique',
   'meta.home.title': 'Photo Vibes By Shana — Portfolio',
