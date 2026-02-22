@@ -1,5 +1,6 @@
 import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
 import { Header } from '@/components/header/header';
+import { ContainerEnter } from '@/components/animations/container-enter/container-enter';
 
 export default async function WithNavLayout({
   children,
@@ -11,7 +12,7 @@ export default async function WithNavLayout({
   return (
     <>
       <Header locale={locale} />
-      <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
+      <ContainerEnter className="min-h-0 flex-1 overflow-hidden">{children}</ContainerEnter>
     </>
   );
 }
