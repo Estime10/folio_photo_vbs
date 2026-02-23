@@ -75,7 +75,7 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
     return createPortal(
       <div
         ref={overlayRef}
-        className="fixed left-0 right-0 top-(--header-total-height) z-9999 flex h-0 flex-col overflow-hidden bg-background/90 backdrop-blur-md"
+        className="fixed left-0 right-0 top-(--header-total-height) z-[9999] flex h-0 flex-col overflow-hidden bg-background/90 backdrop-blur-md"
         aria-modal="true"
         aria-label="Menu"
         role="dialog"

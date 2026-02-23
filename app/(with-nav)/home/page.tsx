@@ -3,10 +3,13 @@ import { t } from '@/lib/i18n/i18n';
 import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
 import { Home } from '@/features/home/Home';
 
-export const metadata: Metadata = {
-  title: t('meta.home.title'),
-  description: t('meta.home.description'),
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocaleFromRequest();
+  return {
+    title: t('meta.home.title', locale),
+    description: t('meta.home.description', locale),
+  };
+}
 
 export default async function HomePage() {
   const locale = await getLocaleFromRequest();

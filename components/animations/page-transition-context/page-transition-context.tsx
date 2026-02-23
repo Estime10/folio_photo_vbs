@@ -74,5 +74,9 @@ export function PageTransitionProvider({ children }: PageTransitionProviderProps
     registerContainerRef,
   };
 
-  return <PageTransitionContext.Provider value={value}>{children}</PageTransitionContext.Provider>;
+  return (
+    <PageTransitionContext.Provider value={value}>
+      <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+    </PageTransitionContext.Provider>
+  );
 }

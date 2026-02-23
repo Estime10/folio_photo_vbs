@@ -40,8 +40,7 @@ export function Splash() {
   }, [router]);
 
   const handleZoomComplete = useCallback(() => setShowLogo(true), []);
-  const logoDelayMs =
-    (SPLASH.zoomDelayS + SPLASH.zoomDurationS - SPLASH.logoShowBeforeEndS) * 1000;
+  const logoDelayMs = (SPLASH.zoomDelayS + SPLASH.zoomDurationS - SPLASH.logoShowBeforeEndS) * 1000;
 
   useEffect(() => {
     const t = setTimeout(handleZoomComplete, logoDelayMs);
@@ -49,7 +48,7 @@ export function Splash() {
   }, [handleZoomComplete, logoDelayMs]);
 
   return (
-    <div ref={splashRef} className="relative min-h-100dvh w-full flex-1 overflow-hidden">
+    <div ref={splashRef} className="relative min-h-dvh w-full flex-1 overflow-hidden">
       <div ref={imageWrapperRef} className="absolute inset-0 grayscale">
         <Image
           src={profileImagesBg.src}
@@ -66,12 +65,7 @@ export function Splash() {
         className="absolute left-[53%] top-[23.6%] md:top-[25.5%] lg:top-[25%] xl:top-[44%] 2xl:top-[46.5%] z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2"
         aria-hidden
       />
-      {showLogo && (
-        <SplashLogo
-          text={logoNav.label}
-          onAnimationComplete={handleLogoComplete}
-        />
-      )}
+      {showLogo && <SplashLogo text={logoNav.label} onAnimationComplete={handleLogoComplete} />}
     </div>
   );
 }
