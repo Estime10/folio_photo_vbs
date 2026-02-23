@@ -4,9 +4,10 @@ import { ROUTES } from '@/lib/navigation-routes/routes/routes';
 type HomeHeroCtaProps = {
   galleryLabel: string;
   contactLabel: string;
+  onContactClick?: () => void;
 };
 
-export function HomeHeroCta({ galleryLabel, contactLabel }: HomeHeroCtaProps) {
+export function HomeHeroCta({ galleryLabel, contactLabel, onContactClick }: HomeHeroCtaProps) {
   return (
     <div className="mt-6 flex flex-wrap items-center gap-4 p-(--container-padding-x) lg:mt-8">
       <Link
@@ -15,12 +16,22 @@ export function HomeHeroCta({ galleryLabel, contactLabel }: HomeHeroCtaProps) {
       >
         {galleryLabel}
       </Link>
-      <Link
-        href={ROUTES.contact}
-        className="text-sm font-medium text-foreground/90 underline-offset-4 transition-colors hover:text-foreground hover:underline"
-      >
-        {contactLabel}
-      </Link>
+      {onContactClick != null ? (
+        <button
+          type="button"
+          onClick={onContactClick}
+          className="cursor-pointer text-sm font-medium text-foreground/90 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+        >
+          {contactLabel}
+        </button>
+      ) : (
+        <Link
+          href={ROUTES.contact}
+          className="cursor-pointer text-sm font-medium text-foreground/90 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+        >
+          {contactLabel}
+        </Link>
+      )}
     </div>
   );
 }

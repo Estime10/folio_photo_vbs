@@ -27,7 +27,7 @@ export function HomeFooter({ locale }: HomeFooterProps) {
   } = useTestimonialCarousel();
 
   return (
-    <div className="grid h-full w-full grid-cols-[15%_70%_15%] overflow-hidden rounded-b-md rounded-l-none border border-white/15 bg-white/6 backdrop-blur-xs backdrop-saturate-150">
+    <div className="grid h-full w-full grid-cols-[15%_70%_15%] overflow-hidden rounded-b-none rounded-l-none border border-white/15 bg-white/6 backdrop-blur-xs backdrop-saturate-150">
       <FooterArrow direction="left" onClick={goToPrevious} />
       <div className="flex min-w-0 flex-col items-center justify-center gap-2 p-2">
         <div className="min-h-0 flex-1 overflow-hidden">

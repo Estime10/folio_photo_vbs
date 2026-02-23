@@ -12,13 +12,44 @@ const ALL_IMAGES: readonly PortfolioImage[] = [
 
 const MINIATURE_LIMIT = 9;
 
-function pickRandomImages(limit: number): PortfolioImage[] {
-  const shuffled = [...ALL_IMAGES].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, limit);
+/** Graine fixe pour que le shuffle soit identique côté serveur et client (évite le hydration mismatch). */
+const SHUFFLE_SEED = 42;
+
+/**
+ * Générateur pseudo-aléatoire déterministe (Mulberry32).
+ * Même seed → même séquence, donc même ordre SSR et client.
+ */
+function createSeededRandom(seed: number): () => number {
+  let state = seed;
+  return function next() {
+    state |= 0;
+    state = (state + 0x6d2b79f5) | 0; // eslint-disable-line no-bitwise
+    let t = Math.imul(state ^ (state >>> 15), state | 1); // eslint-disable-line no-bitwise
+    t = (t + (t >>> 31)) | 0; // eslint-disable-line no-bitwise
+    return (t >>> 0) / 4294967296;
+  };
+}
+
+function pickDeterministicImages(limit: number, seed: number): PortfolioImage[] {
+  const random = createSeededRandom(seed);
+  const copy: PortfolioImage[] = [...ALL_IMAGES];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    const a = copy[i];
+    const b = copy[j];
+    if (a != null && b != null) {
+      copy[i] = b;
+      copy[j] = a;
+    }
+  }
+  return copy.slice(0, limit);
 }
 
 export function HomeMiniatureItems() {
-  const images = useMemo(() => pickRandomImages(MINIATURE_LIMIT), []);
+  const images = useMemo(
+    () => pickDeterministicImages(MINIATURE_LIMIT, SHUFFLE_SEED),
+    []
+  );
 
   return (
     <div className="flex h-full w-full items-center justify-center p-3 @container/size">

@@ -6,13 +6,18 @@ type HomeHeroProps = {
   tagline: string;
   ctaGalleryLabel: string;
   ctaContactLabel: string;
+  onContactClick?: () => void;
 };
 
-export function HomeHero({ title, tagline, ctaGalleryLabel, ctaContactLabel }: HomeHeroProps) {
+export function HomeHero({ title, tagline, ctaGalleryLabel, ctaContactLabel, onContactClick }: HomeHeroProps) {
   return (
     <div className="flex h-full min-w-0 flex-1 flex-col">
       <HomeHeader title={title} tagline={tagline} />
-      <HomeHeroCta galleryLabel={ctaGalleryLabel} contactLabel={ctaContactLabel} />
+      <HomeHeroCta
+        galleryLabel={ctaGalleryLabel}
+        contactLabel={ctaContactLabel}
+        onContactClick={onContactClick}
+      />
     </div>
   );
 }

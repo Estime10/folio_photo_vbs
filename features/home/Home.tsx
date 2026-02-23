@@ -12,9 +12,17 @@ type HomeProps = {
   tagline: string;
   ctaGalleryLabel: string;
   ctaContactLabel: string;
+  onContactClick?: () => void;
 };
 
-export function Home({ locale, title, tagline, ctaGalleryLabel, ctaContactLabel }: HomeProps) {
+export function Home({
+  locale,
+  title,
+  tagline,
+  ctaGalleryLabel,
+  ctaContactLabel,
+  onContactClick,
+}: HomeProps) {
   return (
     <div className="relative h-full min-h-0 flex-1">
       <div className="absolute inset-0">
@@ -32,6 +40,7 @@ export function Home({ locale, title, tagline, ctaGalleryLabel, ctaContactLabel 
               tagline={tagline}
               ctaGalleryLabel={ctaGalleryLabel}
               ctaContactLabel={ctaContactLabel}
+              onContactClick={onContactClick}
             />
             <HomeMiniatures />
           </BlurCard>
