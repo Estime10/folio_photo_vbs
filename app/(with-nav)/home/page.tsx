@@ -12,6 +12,7 @@ export default async function HomePage() {
   const locale = await getLocaleFromRequest();
   return (
     <Home
+      locale={locale}
       title={t('home.hero.title', locale)}
       tagline={t('home.hero.tagline', locale)}
       ctaGalleryLabel={t('home.hero.cta.gallery', locale)}
