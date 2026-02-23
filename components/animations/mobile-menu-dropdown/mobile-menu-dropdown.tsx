@@ -9,6 +9,7 @@ import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
+import { MOBILE_MENU } from '@/lib/config/animations';
 
 const LOCALES: { value: Locale; label: string }[] = [
   { value: 'fr', label: 'FR' },
@@ -21,7 +22,6 @@ function setLocaleCookie(locale: Locale) {
 }
 
 const OVERLAY_HEIGHT = '50vh';
-const ANIMATION_DURATION = 0.6;
 
 type MobileMenuDropdownProps = {
   isOpen: boolean;
@@ -46,8 +46,8 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
       }
       gsap.to(overlayRef.current, {
         height: 0,
-        duration: ANIMATION_DURATION,
-        ease: 'power2.in',
+        duration: MOBILE_MENU.duration,
+        ease: MOBILE_MENU.easeIn,
         overwrite: true,
         onComplete: onClose,
       });
@@ -62,8 +62,8 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
         { height: 0 },
         {
           height: OVERLAY_HEIGHT,
-          duration: ANIMATION_DURATION,
-          ease: 'power2.out',
+          duration: MOBILE_MENU.duration,
+          ease: MOBILE_MENU.easeOut,
           overwrite: true,
         }
       );

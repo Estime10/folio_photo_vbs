@@ -9,11 +9,7 @@ import { useSplashZoom } from '@/components/animations/splash-zoom/use-splash-zo
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 import { ROUTES } from '@/lib/navigation-routes/routes/routes';
 import { profileImagesBg } from '@/lib/images/profile/profile';
-
-const ZOOM_DELAY_S = 3;
-const ZOOM_DURATION_S = 8;
-const LOGO_SHOW_BEFORE_END_S = 1.5;
-const FADEOUT_DURATION = 0.6;
+import { SPLASH } from '@/lib/config/animations';
 
 export function Splash() {
   const router = useRouter();
@@ -25,8 +21,8 @@ export function Splash() {
   useSplashZoom({
     wrapperRef: imageWrapperRef,
     dotRef,
-    delay: ZOOM_DELAY_S,
-    duration: ZOOM_DURATION_S,
+    delay: SPLASH.zoomDelayS,
+    duration: SPLASH.zoomDurationS,
   });
 
   const handleLogoComplete = useCallback(() => {
@@ -37,14 +33,15 @@ export function Splash() {
     }
     gsap.to(el, {
       opacity: 0,
-      duration: FADEOUT_DURATION,
-      ease: 'power2.in',
+      duration: SPLASH.fadeoutDuration,
+      ease: SPLASH.fadeoutEase,
       onComplete: () => router.push(ROUTES.home),
     });
   }, [router]);
 
   const handleZoomComplete = useCallback(() => setShowLogo(true), []);
-  const logoDelayMs = (ZOOM_DELAY_S + ZOOM_DURATION_S - LOGO_SHOW_BEFORE_END_S) * 1000;
+  const logoDelayMs =
+    (SPLASH.zoomDelayS + SPLASH.zoomDurationS - SPLASH.logoShowBeforeEndS) * 1000;
 
   useEffect(() => {
     const t = setTimeout(handleZoomComplete, logoDelayMs);

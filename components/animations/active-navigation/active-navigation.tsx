@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ACTIVE_NAVIGATION } from '@/lib/config/animations';
 
 type ActiveNavigationProps = {
   linkRefs: React.RefObject<(HTMLElement | null)[]>;
@@ -19,8 +20,8 @@ export function ActiveNavigation({ linkRefs, activeIndex }: ActiveNavigationProp
     gsap.to(underlineRef.current, {
       left: activeEl.offsetLeft,
       width: activeEl.offsetWidth,
-      duration: 0.3,
-      ease: 'power2.out',
+      duration: ACTIVE_NAVIGATION.duration,
+      ease: ACTIVE_NAVIGATION.ease,
       overwrite: true,
     });
   }, [activeIndex, linkRefs]);

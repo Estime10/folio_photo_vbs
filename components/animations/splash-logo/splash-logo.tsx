@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { SPLASH_LOGO } from '@/lib/config/animations';
 
 type SplashLogoProps = {
   text: string;
@@ -22,14 +23,14 @@ export function SplashLogo({ text, onAnimationComplete }: SplashLogoProps) {
     });
     tl.to(el, {
       y: 0,
-      duration: 1.2,
-      ease: 'power2.out',
+      duration: SPLASH_LOGO.duration,
+      ease: SPLASH_LOGO.ease,
     }).to(
       el,
       {
         opacity: 1,
-        duration: 2.8,
-        ease: 'sine.in',
+        duration: SPLASH_LOGO.strokeDuration,
+        ease: SPLASH_LOGO.strokeEase,
       },
       0
     );

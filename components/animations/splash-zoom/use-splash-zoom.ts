@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import gsap from 'gsap';
+import { SPLASH } from '@/lib/config/animations';
 
 type UseSplashZoomParams = {
   wrapperRef: React.RefObject<HTMLDivElement | null>;
@@ -9,14 +10,16 @@ type UseSplashZoomParams = {
   delay?: number;
   duration?: number;
   scale?: number;
+  ease?: string;
 };
 
 export function useSplashZoom({
   wrapperRef,
   dotRef,
-  delay = 3,
-  duration = 8,
+  delay = SPLASH.zoomDelayS,
+  duration = SPLASH.zoomDurationS,
   scale = 100,
+  ease = SPLASH.zoomEase,
 }: UseSplashZoomParams): void {
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -35,7 +38,7 @@ export function useSplashZoom({
       scale,
       duration,
       delay,
-      ease: 'power2.in',
+      ease,
     });
-  }, [wrapperRef, dotRef, delay, duration, scale]);
+  }, [wrapperRef, dotRef, delay, duration, scale, ease]);
 }

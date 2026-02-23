@@ -4,11 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import gsap from 'gsap';
 import { getShuffledTestimonials, testimonialsFakeData } from '@/lib/data/testimonials';
 import type { Testimonial } from '@/types/testimonial';
-
-const AUTO_PLAY_INTERVAL_MS = 5000;
-const TRANSITION_DURATION = 0.4;
-const TRANSITION_EASE = 'power2.out';
-const TRANSITION_OFFSET_X = 24;
+import { TESTIMONIAL_CAROUSEL } from '@/lib/config/animations';
 
 export type UseTestimonialCarouselReturn = {
   shuffled: Testimonial[];
@@ -53,14 +49,14 @@ export function useTestimonialCarousel(): UseTestimonialCarouselReturn {
     if (count === 0) return;
     const id = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % count);
-    }, AUTO_PLAY_INTERVAL_MS);
+    }, TESTIMONIAL_CAROUSEL.autoPlayIntervalMs);
     return () => clearInterval(id);
   }, [count]);
 
   useLayoutEffect(() => {
     const el = contentRef.current;
     if (el == null) return;
-    gsap.set(el, { opacity: 0, x: -TRANSITION_OFFSET_X });
+    gsap.set(el, { opacity: 0, x: -TESTIMONIAL_CAROUSEL.transitionOffsetX });
   }, [currentIndex]);
 
   useEffect(() => {
@@ -69,8 +65,8 @@ export function useTestimonialCarousel(): UseTestimonialCarouselReturn {
     gsap.to(el, {
       opacity: 1,
       x: 0,
-      duration: TRANSITION_DURATION,
-      ease: TRANSITION_EASE,
+      duration: TESTIMONIAL_CAROUSEL.transitionDuration,
+      ease: TESTIMONIAL_CAROUSEL.ease,
     });
   }, [currentIndex]);
 
