@@ -3,20 +3,17 @@ import type { CSSProperties, ReactNode } from 'react';
 const GLASS_CLASSES =
   'rounded-lg border border-white/20 bg-white/8 backdrop-blur-md backdrop-saturate-150';
 
-const GLASS_CLASSES_NO_BORDER =
-  'rounded-lg bg-white/8 backdrop-blur-md backdrop-saturate-150';
+const GLASS_CLASSES_NO_BORDER = 'rounded-lg bg-white/8 backdrop-blur-md backdrop-saturate-150';
 
 /** Clip-path: encoche en bas à gauche (≈ 50% largeur, à partir de 55% hauteur). */
-const NOTCH_BOTTOM_LEFT_CLIP =
-  'polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 55%, 0 55%, 0 0)';
+const NOTCH_BOTTOM_LEFT_CLIP = 'polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 55%, 0 55%, 0 0)';
 
 /** Path SVG pour la bordure qui suit le contour (notch inclus). Même forme que le clip. */
-const NOTCH_BORDER_PATH =
-  'M 0 0 L 100 0 L 100 100 L 50 100 L 50 55 L 0 55 Z';
+const NOTCH_BORDER_PATH = 'M 0 0 L 100 0 L 100 100 L 50 100 L 50 55 L 0 55 Z';
 
-/** Zone du notch : gauche, largeur 50%, hauteur 45% (de 55% à 100%). */
+/** Zone du notch : gauche, largeur 50%, hauteur 45% (de 55% à 100%). Au-dessus du contenu pour recevoir les clics. */
 const NOTCH_SLOT_CLASSES =
-  'absolute bottom-0 left-0 z-10 flex h-[45%] w-1/2 items-center justify-center p-(--container-padding-x)';
+  'absolute -bottom-2 -left-2 z-20 flex h-[46%] w-[50.5%] items-center justify-center p-2';
 
 type BlurCardProps = {
   children: ReactNode;
@@ -62,9 +59,7 @@ export function BlurCard({
             vectorEffect="non-scaling-stroke"
           />
         </svg>
-        {notchContent != null ? (
-          <div className={NOTCH_SLOT_CLASSES}>{notchContent}</div>
-        ) : null}
+        {notchContent != null ? <div className={NOTCH_SLOT_CLASSES}>{notchContent}</div> : null}
         <div className="relative z-10 flex min-h-0 flex-1">{children}</div>
       </div>
     );
@@ -72,9 +67,7 @@ export function BlurCard({
 
   return (
     <div
-      className={['overflow-hidden rounded-lg', GLASS_CLASSES, className]
-        .filter(Boolean)
-        .join(' ')}
+      className={['overflow-hidden rounded-lg', GLASS_CLASSES, className].filter(Boolean).join(' ')}
     >
       {children}
     </div>
