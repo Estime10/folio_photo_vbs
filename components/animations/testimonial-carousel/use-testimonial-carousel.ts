@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { getShuffledTestimonials } from '@/lib/data/testimonials';
+import { getShuffledTestimonials, testimonialsFakeData } from '@/lib/data/testimonials';
 import type { Testimonial } from '@/types/testimonial';
 
 const AUTO_PLAY_INTERVAL_MS = 5000;
@@ -22,10 +22,20 @@ export type UseTestimonialCarouselReturn = {
 };
 
 export function useTestimonialCarousel(): UseTestimonialCarouselReturn {
-  const shuffled = useMemo(() => getShuffledTestimonials(), []);
+  const [shuffled, setShuffled] = useState<Testimonial[]>(() => [...testimonialsFakeData]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const count = shuffled.length;
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const next = getShuffledTestimonials();
+    setShuffled(next);
+    const currentId = shuffled[currentIndex]?.id;
+    if (currentId != null) {
+      const idx = next.findIndex((t) => t.id === currentId);
+      if (idx >= 0) setCurrentIndex(idx);
+    }
+  }, []);
 
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + count) % count);
