@@ -7,16 +7,10 @@ type HomeMobileFooterProps = {
   contactLabel: string;
 };
 
-export function HomeMobileFooter({
-  tagline,
-  galleryLabel,
-  contactLabel,
-}: HomeMobileFooterProps) {
+export function HomeMobileFooter({ tagline, galleryLabel, contactLabel }: HomeMobileFooterProps) {
   return (
-    <footer className="shrink-0 space-y-4 p-(--container-padding-x) pb-[calc(1.5rem-5px)]">
-      <p className="whitespace-pre-line text-lg text-foreground/90 md:text-xl">
-        {tagline}
-      </p>
+    <footer className="shrink-0 space-y-4 p-(--container-padding-x) pb-[calc(env(safe-area-inset-bottom,0px)+20px)] lg:pb-[calc(1.5rem-5px+50px+env(safe-area-inset-bottom,0px))]">
+      <p className="whitespace-pre-line text-lg text-foreground/90 md:text-xl">{tagline}</p>
       <div className="flex flex-wrap items-center gap-4">
         <Link
           href={ROUTES.gallery}
