@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { PAGE_ENTER } from '@/lib/config/animations';
 
 /**
- * Anime le container du bas vers le haut (y: 100% → 0).
+ * Anime le container du bas vers le haut (y: 100% → 0) avec fade in (opacity 0 → 1).
  * Re-joué à chaque changement de route pour que l’animation soit visible sur toutes les pages.
  */
 export function useContainerEnter(
@@ -18,9 +18,10 @@ export function useContainerEnter(
 
     gsap.fromTo(
       el,
-      { y: '100%' },
+      { y: '100%', opacity: 0 },
       {
         y: 0,
+        opacity: 1,
         duration: PAGE_ENTER.duration,
         delay: PAGE_ENTER.delay,
         ease: PAGE_ENTER.ease,

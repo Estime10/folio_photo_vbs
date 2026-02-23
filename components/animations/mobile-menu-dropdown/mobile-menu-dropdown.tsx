@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
+import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
 import { t } from '@/lib/i18n/i18n';
@@ -10,6 +9,8 @@ import type { Locale } from '@/lib/i18n/messages/messages';
 import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
 import { MOBILE_MENU } from '@/lib/config/animations';
+import { PageTransitionContext } from '@/components/animations/page-transition-context/page-transition-context';
+import { TransitionLink } from '@/components/animations/transition-link/transition-link';
 
 const LOCALES: { value: Locale; label: string }[] = [
   { value: 'fr', label: 'FR' },
@@ -97,14 +98,14 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
               );
             }
             return (
-              <Link
+              <TransitionLink
                 key={item.href}
                 href={item.href}
                 onClick={close}
                 className="uppercase text-foreground"
               >
                 {t(item.key, locale)}
-              </Link>
+              </TransitionLink>
             );
           })}
         </nav>

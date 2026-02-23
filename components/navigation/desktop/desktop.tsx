@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useRef } from 'react';
 import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
 import { ActiveNavigation } from '@/components/animations/active-navigation/active-navigation';
+import { TransitionLink } from '@/components/animations/transition-link/transition-link';
 
 type DesktopNavProps = {
   locale: Locale;
@@ -23,7 +23,7 @@ export function DesktopNav({ locale }: DesktopNavProps) {
   return (
     <nav className="relative flex items-center gap-6 md:gap-8" aria-label="Navigation principale">
       {navigationItems.map((item, i) => (
-        <Link
+        <TransitionLink
           key={item.href}
           ref={(el) => {
             linkRefs.current[i] = el;
@@ -33,7 +33,7 @@ export function DesktopNav({ locale }: DesktopNavProps) {
           aria-current={pathname === item.href ? 'page' : undefined}
         >
           {t(item.key, locale)}
-        </Link>
+        </TransitionLink>
       ))}
       <ActiveNavigation linkRefs={linkRefs} activeIndex={activeIndex} />
     </nav>

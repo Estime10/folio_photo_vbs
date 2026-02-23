@@ -21,6 +21,13 @@ export const PAGE_ENTER = {
   easeCubicBezier: EASE_POWER2_OUT_CUBIC_BEZIER,
 } as const;
 
+/** Sortie de page (inverse de l’entrée) avant navigation. */
+export const PAGE_EXIT = {
+  duration: PAGE_ENTER.duration,
+  delay: PAGE_ENTER.delay,
+  ease: EASE_POWER2_OUT,
+} as const;
+
 // ─── Transition entre pages (slide gauche/droite) ───────────────────────────
 export const PAGE_TRANSITION = {
   duration: PAGE_ENTER.duration,
