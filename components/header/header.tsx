@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useRef } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 import { Navigation } from '@/components/navigation/navigation';
@@ -14,12 +15,13 @@ type HeaderProps = {
 
 export function Header({ locale }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
-  useHeaderEnter(headerRef);
+  const pathname = usePathname();
+  useHeaderEnter(headerRef, pathname);
 
   return (
     <header
       ref={headerRef}
-      className="grid h-(--header-height) w-full grid-cols-[auto_1fr] items-center border-b border-foreground/10 px-(--container-padding-x) xl:grid-cols-[1fr_auto_1fr]"
+      className="grid h-(--header-height) w-full shrink-0 grid-cols-[auto_1fr] items-center px-(--container-padding-x) xl:grid-cols-[1fr_auto_1fr]"
     >
       <Link
         href={logoNav.href}

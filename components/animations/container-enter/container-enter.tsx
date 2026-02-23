@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { useContainerEnter } from '@/components/animations/container-enter/use-container-enter';
 
@@ -11,7 +12,8 @@ type ContainerEnterProps = {
 
 export function ContainerEnter({ children, className = '' }: ContainerEnterProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  useContainerEnter(containerRef);
+  const pathname = usePathname();
+  useContainerEnter(containerRef, pathname);
 
   return (
     <div ref={containerRef} className={className}>
