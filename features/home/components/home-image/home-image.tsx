@@ -9,7 +9,7 @@ export function HomeImage() {
         src={profileImages.src}
         alt=""
         fill
-        className="object-center object-contain lg:object-cover"
+        className="object-center object-contain xl:object-cover"
         sizes="100vw"
         priority
       />

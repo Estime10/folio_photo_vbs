@@ -18,7 +18,7 @@ export function Home({ title, tagline, ctaGalleryLabel, ctaContactLabel }: HomeP
       <div className="absolute inset-0">
         <HomeImage />
       </div>
-      <div className="absolute inset-0 z-50 hidden lg:block">
+      <div className="absolute inset-0 z-50 hidden xl:block">
         <Container>
           <BlurCard
             className="flex h-full w-full flex-col"
