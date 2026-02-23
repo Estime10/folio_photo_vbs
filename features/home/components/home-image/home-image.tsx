@@ -4,7 +4,7 @@ import { profileImages } from '@/lib/images/profile/profile';
 export function HomeImage() {
   return (
     <div className="relative h-full w-full min-h-(--container-min-height)">
-      <div className="absolute inset-0 z-10 bg-black/80" />
+      <div className="absolute inset-0 z-10 bg-black/50 xl:bg-black/80" />
       <Image
         src={profileImages.src}
         alt=""
