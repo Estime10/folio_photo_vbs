@@ -13,7 +13,7 @@ const NOTCH_BORDER_PATH = 'M 0 0 L 100 0 L 100 100 L 50 100 L 50 55 L 0 55 Z';
 
 /** Zone du notch : gauche, largeur 50%, hauteur 45% (de 55% à 100%). Au-dessus du contenu pour recevoir les clics. */
 const NOTCH_SLOT_CLASSES =
-  'absolute -bottom-2 -left-2 z-20 flex h-[46%] w-[50.5%] items-center justify-center p-2';
+  'absolute -bottom-2 -left-2 z-20 flex h-[46%] w-[50.5%] items-center justify-center p-2 ';
 
 type BlurCardProps = {
   children: ReactNode;
