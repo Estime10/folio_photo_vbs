@@ -1,13 +1,5 @@
 import type { Testimonial } from '@/types/testimonial';
-
-function shuffle<T>(array: readonly T[]): T[] {
-  const out = [...array];
-  for (let i = out.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
-}
+import { shuffleRandom } from '@/lib/utils/seeded-shuffle';
 
 export const testimonialsFakeData: readonly Testimonial[] = [
   {
@@ -89,5 +81,5 @@ export const testimonialsFakeData: readonly Testimonial[] = [
 
 /** Retourne les témoignages dans un ordre aléatoire (stable pour une session). */
 export function getShuffledTestimonials(): Testimonial[] {
-  return shuffle(testimonialsFakeData);
+  return shuffleRandom(testimonialsFakeData);
 }
