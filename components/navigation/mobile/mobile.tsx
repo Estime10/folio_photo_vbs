@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import {
@@ -24,16 +25,17 @@ export function MobileNav({ locale }: MobileNavProps) {
 
   return (
     <>
-      <button
+      <motion.button
         type="button"
         onClick={isOpen ? closeMenu : openMenu}
-        className="cursor-default text-sm font-medium uppercase tracking-wide text-foreground focus:ring-0 md:text-lg"
+        className="cursor-pointer text-sm font-medium uppercase tracking-wide text-foreground focus:ring-0 md:text-lg"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={isOpen ? t('nav.close', locale) : 'Ouvrir le menu'}
+        whileTap={{ scale: 0.97 }}
       >
         {isOpen ? t('nav.close', locale) : 'Menu'}
-      </button>
+      </motion.button>
       {isOpen && (
         <MobileMenuDropdown
           ref={dropdownRef}

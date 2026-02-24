@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useContext, forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import { PageTransitionContext } from '@/components/animations/page-transition-context/page-transition-context';
 
 type TransitionLinkProps = Omit<React.ComponentProps<typeof Link>, 'href'> & {
@@ -14,7 +15,7 @@ type TransitionLinkProps = Omit<React.ComponentProps<typeof Link>, 'href'> & {
  * Utilisé pour les liens internes du site.
  */
 export const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>(
-  function TransitionLink({ href, onClick, ...rest }, ref) {
+  function TransitionLink({ href, onClick, children, ...rest }, ref) {
     const pathname = usePathname();
     const ctx = useContext(PageTransitionContext);
 
@@ -30,6 +31,12 @@ export const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>
       }
     };
 
-    return <Link ref={ref} href={href} onClick={handleClick} {...rest} />;
+    return (
+      <Link ref={ref} href={href} onClick={handleClick} {...rest}>
+        <motion.span className="inline-block" whileTap={{ scale: 0.97 }}>
+          {children}
+        </motion.span>
+      </Link>
+    );
   }
 );

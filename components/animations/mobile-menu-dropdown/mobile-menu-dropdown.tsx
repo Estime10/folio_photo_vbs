@@ -1,15 +1,15 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef, useContext } from 'react';
+import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
+import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
 import { MOBILE_MENU } from '@/lib/config/animations';
-import { PageTransitionContext } from '@/components/animations/page-transition-context/page-transition-context';
 import { TransitionLink } from '@/components/animations/transition-link/transition-link';
 
 const LOCALES: { value: Locale; label: string }[] = [
@@ -75,7 +75,7 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
     return createPortal(
       <div
         ref={overlayRef}
-        className="fixed left-0 right-0 top-(--header-total-height) z-[9999] flex h-0 flex-col overflow-hidden bg-background/90 backdrop-blur-md"
+        className="fixed left-0 right-0 top-(--header-total-height) z-9999 flex h-0 flex-col overflow-hidden bg-background/90 backdrop-blur-md"
         aria-modal="true"
         aria-label="Menu"
         role="dialog"
@@ -124,7 +124,7 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
               );
             }
             return (
-              <button
+              <motion.button
                 key={value}
                 type="button"
                 onClick={() => {
@@ -133,9 +133,10 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
                   close();
                 }}
                 className="uppercase text-foreground"
+                whileTap={{ scale: 0.97 }}
               >
                 {label}
-              </button>
+              </motion.button>
             );
           })}
         </div>

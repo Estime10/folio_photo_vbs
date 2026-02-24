@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { ROUTES } from '@/lib/navigation-routes/routes/routes';
 
 type HomeCtaButtonsProps = {
@@ -31,19 +32,21 @@ export function HomeCtaButtons({
   return (
     <div className="flex flex-wrap items-center gap-4">
       <Link href={ROUTES.gallery} className={galleryClasses}>
-        {galleryLabel}
+        <motion.span className="block" whileTap={{ scale: 0.97 }}>
+          {galleryLabel}
+        </motion.span>
       </Link>
       {onContactClick != null ? (
-        <button
-          type="button"
-          onClick={onContactClick}
-          className={contactClasses}
-        >
-          {contactLabel}
+        <button type="button" onClick={onContactClick} className={contactClasses}>
+          <motion.span className="block" whileTap={{ scale: 0.97 }}>
+            {contactLabel}
+          </motion.span>
         </button>
       ) : (
         <Link href={ROUTES.contact} className={contactClasses}>
-          {contactLabel}
+          <motion.span className="block" whileTap={{ scale: 0.97 }}>
+            {contactLabel}
+          </motion.span>
         </Link>
       )}
     </div>
