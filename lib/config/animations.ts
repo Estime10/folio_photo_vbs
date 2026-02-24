@@ -82,4 +82,5 @@ export const GALLERY_SCROLL_REVEAL = {
   /** Durée d’un sens (vers le bas ou vers le haut). */
   duration: 1.2,
   ease: EASE_POWER2_OUT,
+  modalFadeInDuration: 0.5,
 } as const;
