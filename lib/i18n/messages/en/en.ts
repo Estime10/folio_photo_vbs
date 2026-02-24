@@ -53,6 +53,10 @@ And when the moment is right, when everything aligns perfectly, there is nothing
 Because true beauty does not need to be retouched.
 It already exists, there, in the soul of the one who stands on the other side of the lens.`,
   'nav.contact': 'Contact',
+  'contact.page.subtitle':
+    'For a project, a collaboration or just to say hello — by email or on Instagram.',
+  'contact.channel.email': 'Send an email',
+  'contact.channel.instagram': 'View Instagram',
   'nav.close': 'Close',
   'home.title': 'Portfolio',
   'home.subtitle': 'Photography',

@@ -53,6 +53,10 @@ En wanneer het moment klopt, wanneer alles perfect op zijn plaats valt, is er ni
 Omdat ware schoonheid niet hoeft te worden geretoucheerd.
 Ze bestaat al, daar, in de ziel van degene die aan de andere kant van de lens staat.`,
   'nav.contact': 'Contact',
+  'contact.page.subtitle':
+    'Voor een project, een samenwerking of gewoon hallo zeggen — per e-mail of op Instagram.',
+  'contact.channel.email': 'Stuur een e-mail',
+  'contact.channel.instagram': 'Bekijk Instagram',
   'nav.close': 'Sluiten',
   'home.title': 'Portfolio',
   'home.subtitle': 'Fotografie',

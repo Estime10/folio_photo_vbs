@@ -53,6 +53,10 @@ Et lorsque l'instant est juste, lorsque tout s'aligne parfaitement, il n'y a rie
 Parce que la vraie beauté n'a pas besoin d'être retouchée.
 Elle existe déjà, là, dans l'âme de celui ou celle qui se tient de l'autre côté de l'objectif.`,
   'nav.contact': 'Contact',
+  'contact.page.subtitle':
+    'Pour un projet, une collaboration ou simplement dire bonjour — par email ou sur Instagram.',
+  'contact.channel.email': 'Envoyer un email',
+  'contact.channel.instagram': "Voir l'Instagram",
   'nav.close': 'Fermer',
   'home.title': 'Portfolio',
   'home.subtitle': 'Photographie',
