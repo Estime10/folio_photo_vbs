@@ -43,12 +43,21 @@ export function BlurCardModal({ locale }: BlurCardModalProps) {
     >
       <div className="grid w-full max-w-full grid-cols-1 gap-4 p-(--container-padding-x) lg:mt-6 xl:mt-0 md:max-w-xl lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
         {CARDS.map((card) => (
-          <BlurCard key={card.titleKey} className="flex min-h-0 flex-col">
-            <header className="shrink-0 px-4 py-3 text-foreground uppercase">
-              {t(card.titleKey, locale)}
-            </header>
-            <BlurCardModalImage src={card.imageSrc} alt={t(card.titleKey, locale)} />
-          </BlurCard>
+          <motion.button
+            key={card.titleKey}
+            type="button"
+            onClick={() => console.log('Card cliquée:', t(card.titleKey, locale))}
+            className="block w-full min-w-0 cursor-default text-left xl:cursor-pointer [border:none] [background:transparent] p-0"
+          >
+            <motion.div className="h-full w-full" whileTap={{ scale: 0.97 }}>
+              <BlurCard className="flex min-h-0 flex-col">
+                <header className="shrink-0 px-4 py-3 text-foreground uppercase">
+                  {t(card.titleKey, locale)}
+                </header>
+                <BlurCardModalImage src={card.imageSrc} alt={t(card.titleKey, locale)} />
+              </BlurCard>
+            </motion.div>
+          </motion.button>
         ))}
       </div>
     </motion.div>
