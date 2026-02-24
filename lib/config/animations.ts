@@ -83,4 +83,5 @@ export const GALLERY_SCROLL_REVEAL = {
   duration: 1.2,
   ease: EASE_POWER2_OUT,
   modalFadeInDuration: 0.5,
+  categoryGridTransitionDuration: 0.25,
 } as const;
