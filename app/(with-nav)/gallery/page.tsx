@@ -9,5 +9,5 @@ export default async function GalleryPage() {
     surtitle: t('gallery.surtitle', locale),
     title: t('nav.gallery', locale),
   };
-  return <Gallery content={content} />;
+  return <Gallery content={content} locale={locale} />;
 }

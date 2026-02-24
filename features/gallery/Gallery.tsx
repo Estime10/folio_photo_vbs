@@ -1,19 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import { BlurCardModal } from '@/components/blur-card-modal/blur-card-modal';
+import { BlurCardModal } from './components/blur-card-modal/blur-card-modal';
 import { BlurCard } from '@/components/blur-card/blur-card';
 import { Container } from '@/components/container/container';
 import { GalleryFullImages } from './components/gallery-full-images/gallery-full-images';
 import { GalleryHeader } from './components/gallery-header/gallery-header';
 import { GalleryScrollReveal } from './components/gallery-scroll-reveal/gallery-scroll-reveal';
+import type { Locale } from '@/lib/i18n/messages/messages';
 import type { GalleryContent } from '@/types/gallery';
 
 type GalleryProps = {
   content: GalleryContent;
+  locale: Locale;
 };
 
-export function Gallery({ content }: GalleryProps) {
+export function Gallery({ content, locale }: GalleryProps) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -31,7 +33,7 @@ export function Gallery({ content }: GalleryProps) {
           </div>
         </BlurCard>
       </div>
-      {showModal && <BlurCardModal />}
+      {showModal && <BlurCardModal locale={locale} />}
     </Container>
   );
 }
