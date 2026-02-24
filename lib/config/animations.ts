@@ -73,3 +73,13 @@ export const ACTIVE_NAVIGATION = {
   duration: 0.3,
   ease: EASE_POWER2_OUT,
 } as const;
+
+// ─── Galerie : scroll reveal après enter ─────────────────────────────────────
+/** Défile vers le bas (2 "scrolls") puis remonte au top, après la fin de PAGE_ENTER. */
+export const GALLERY_SCROLL_REVEAL = {
+  /** Délai après la fin de PAGE_ENTER avant de lancer le scroll (ms). */
+  delayAfterEnterMs: 200,
+  /** Durée d’un sens (vers le bas ou vers le haut). */
+  duration: 1.2,
+  ease: EASE_POWER2_OUT,
+} as const;
