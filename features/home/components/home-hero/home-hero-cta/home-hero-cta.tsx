@@ -1,19 +1,20 @@
 'use client';
 
+import type { HomeContent } from '@/types/home';
 import { HomeCtaButtons } from '@/features/home/components/home-cta-buttons/home-cta-buttons';
 
 type HomeHeroCtaProps = {
-  galleryLabel: string;
-  contactLabel: string;
+  content: HomeContent;
   onContactClick?: () => void;
 };
 
-export function HomeHeroCta({ galleryLabel, contactLabel, onContactClick }: HomeHeroCtaProps) {
+export function HomeHeroCta({ content, onContactClick }: HomeHeroCtaProps) {
+  const { ctaGalleryLabel, ctaContactLabel } = content;
   return (
     <div className="mt-6 p-(--container-padding-x) lg:mt-8">
       <HomeCtaButtons
-        galleryLabel={galleryLabel}
-        contactLabel={contactLabel}
+        galleryLabel={ctaGalleryLabel}
+        contactLabel={ctaContactLabel}
         onContactClick={onContactClick}
         variant="desktop"
       />

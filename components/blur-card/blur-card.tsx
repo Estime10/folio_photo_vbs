@@ -1,9 +1,10 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-const GLASS_CLASSES =
+export const GLASS_CLASSES =
   'rounded-lg border border-white/20 bg-white/8 backdrop-blur-md backdrop-saturate-150';
 
-const GLASS_CLASSES_NO_BORDER = 'rounded-lg bg-white/8 backdrop-blur-md backdrop-saturate-150';
+export const GLASS_CLASSES_NO_BORDER =
+  'rounded-lg bg-white/8 backdrop-blur-md backdrop-saturate-150';
 
 /** Clip-path: encoche en bas à gauche (≈ 50% largeur, à partir de 55% hauteur). */
 const NOTCH_BOTTOM_LEFT_CLIP = 'polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 55%, 0 55%, 0 0)';

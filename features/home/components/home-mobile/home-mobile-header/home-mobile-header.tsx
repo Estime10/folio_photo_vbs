@@ -1,13 +1,15 @@
-import { HeroTitleBlock } from '@/features/home/components/hero-title-block/hero-title-block';
+import type { HomeContent } from '@/types/home';
+import { TitleBlock } from '@/components/ui/title-block';
 
 type HomeMobileHeaderProps = {
-  title: string;
+  content: HomeContent;
 };
 
-export function HomeMobileHeader({ title }: HomeMobileHeaderProps) {
+export function HomeMobileHeader({ content }: HomeMobileHeaderProps) {
+  const { surtitle, title } = content;
   return (
     <header className="shrink-0 p-(--container-padding-x) pt-[calc(1rem+5px)]">
-      <HeroTitleBlock title={title} variant="mobile" />
+      <TitleBlock surtitle={surtitle} title={title} size="hero-mobile" theme="light" />
     </header>
   );
 }

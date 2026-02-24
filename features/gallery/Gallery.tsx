@@ -1,11 +1,13 @@
 import { BlurCard } from '@/components/blur-card/blur-card';
 import { Container } from '@/components/container/container';
+import type { GalleryContent } from '@/types/gallery';
 
 type GalleryProps = {
-  title: string;
+  content: GalleryContent;
 };
 
-export function Gallery({ title }: GalleryProps) {
+export function Gallery({ content }: GalleryProps) {
+  const { title } = content;
   return (
     <Container>
       <BlurCard className="flex h-full w-full min-h-0 flex-col">

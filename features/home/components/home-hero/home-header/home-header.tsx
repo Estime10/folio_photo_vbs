@@ -1,14 +1,21 @@
-import { HeroTitleBlock } from '@/features/home/components/hero-title-block/hero-title-block';
+import type { HomeContent } from '@/types/home';
+import { TitleBlock } from '@/components/ui/title-block';
 
 type HomeHeaderProps = {
-  title: string;
-  tagline: string;
+  content: HomeContent;
 };
 
-export function HomeHeader({ title, tagline }: HomeHeaderProps) {
+export function HomeHeader({ content }: HomeHeaderProps) {
+  const { surtitle, title, tagline } = content;
   return (
     <header className="p-(--container-padding-x)">
-      <HeroTitleBlock title={title} tagline={tagline} variant="desktop" />
+      <TitleBlock
+        surtitle={surtitle}
+        title={title}
+        tagline={tagline}
+        size="hero-desktop"
+        theme="light"
+      />
     </header>
   );
 }
