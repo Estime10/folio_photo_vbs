@@ -9,7 +9,7 @@ import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
 import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
-import { MOBILE_MENU } from '@/lib/config/animations';
+import { MOBILE_MENU, TAP_SCALE } from '@/lib/config/animations';
 import { TransitionLink } from '@/components/animations/transition-link/transition-link';
 
 const LOCALES: { value: Locale; label: string }[] = [
@@ -133,7 +133,7 @@ export const MobileMenuDropdown = forwardRef<MobileMenuDropdownRef, MobileMenuDr
                   close();
                 }}
                 className="uppercase text-foreground"
-                whileTap={{ scale: 0.97 }}
+                whileTap={{ scale: TAP_SCALE }}
               >
                 {label}
               </motion.button>

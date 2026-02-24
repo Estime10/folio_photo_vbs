@@ -10,12 +10,15 @@ type StoryHeaderProps = {
 };
 
 export function StoryHeader({ content }: StoryHeaderProps) {
-  const { surtitle, titleVision, titlePassion, visionBody, passionBody } = content;
+  const { surtitle, titleWho, titleVision, titlePassion, visionBody, passionBody } = content;
   return (
     <>
       <p className="text-left text-sm font-medium uppercase tracking-wider text-foreground/70">
         {surtitle}
       </p>
+      <h2 className="mt-4 text-xl font-medium tracking-tight text-foreground md:text-2xl">
+        {titleWho}
+      </h2>
       {/* En md : deux cartes empilées, BlurCard scrollable. En lg+ : deux colonnes côte à côte, scroll interne par carte. */}
       <div className="mt-6 flex flex-col gap-6 lg:min-h-0 lg:flex-1 lg:flex-row lg:gap-8">
         <div className={STORY_CARD_CLASSES}>

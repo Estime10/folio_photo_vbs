@@ -85,3 +85,30 @@ export const GALLERY_SCROLL_REVEAL = {
   modalFadeInDuration: 0.5,
   categoryGridTransitionDuration: 0.25,
 } as const;
+
+/** Transition des vues modale galerie (grille / 4 cards). */
+export const GALLERY_MODAL_VIEW_TRANSITION = {
+  duration: GALLERY_SCROLL_REVEAL.categoryGridTransitionDuration,
+  ease: EASE_POWER2_OUT_CUBIC_BEZIER,
+} as const;
+
+// ─── Réutilisables (Contact, cartes, etc.) ────────────────────────────────────
+/** Scale au tap (boutons, liens). */
+export const TAP_SCALE = 0.97;
+
+/** Animation fade + slide up : initial / animate / transition. */
+export const FADE_SLIDE_UP = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.4, ease: EASE_POWER2_OUT_CUBIC_BEZIER },
+} as const;
+
+/** Variants Framer (hidden/visible) pour fade + slide up. */
+export const FADE_SLIDE_UP_VARIANTS = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: EASE_POWER2_OUT_CUBIC_BEZIER },
+  },
+} as const;

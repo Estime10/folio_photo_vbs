@@ -48,3 +48,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+/** Anneau focus accessible (liens, boutons). */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--background),
+    0 0 0 4px var(--foreground);
+}

@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useContext, forwardRef } from 'react';
 import { motion } from 'framer-motion';
+import { TAP_SCALE } from '@/lib/config/animations';
 import { PageTransitionContext } from '@/components/animations/page-transition-context/page-transition-context';
 
 type TransitionLinkProps = Omit<React.ComponentProps<typeof Link>, 'href'> & {
@@ -33,7 +34,7 @@ export const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>
 
     return (
       <Link ref={ref} href={href} onClick={handleClick} {...rest}>
-        <motion.span className="inline-block" whileTap={{ scale: 0.97 }}>
+        <motion.span className="inline-block" whileTap={{ scale: TAP_SCALE }}>
           {children}
         </motion.span>
       </Link>

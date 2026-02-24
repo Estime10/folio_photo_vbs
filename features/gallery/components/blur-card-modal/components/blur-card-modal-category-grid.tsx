@@ -3,16 +3,11 @@
 import { motion } from 'framer-motion';
 import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
-import { EASE_POWER2_OUT_CUBIC_BEZIER, GALLERY_SCROLL_REVEAL } from '@/lib/config/animations';
+import { GALLERY_MODAL_VIEW_TRANSITION, TAP_SCALE } from '@/lib/config/animations';
 import type { PortfolioCategory } from '@/types/portfolio';
 import type { GalleryColumnItem } from '@/features/gallery/lib/distribute-in-columns';
 import { GalleryColumn } from '@/features/gallery/components/gallery-full-images/gallery-column/gallery-column';
 import { BLUR_CARD_MODAL_CARDS } from '@/features/gallery/components/blur-card-modal/blur-card-modal.constants';
-
-const TRANSITION = {
-  duration: GALLERY_SCROLL_REVEAL.categoryGridTransitionDuration,
-  ease: EASE_POWER2_OUT_CUBIC_BEZIER,
-} as const;
 
 type BlurCardModalCategoryGridProps = {
   selectedCategory: PortfolioCategory;
@@ -41,14 +36,14 @@ export function BlurCardModalCategoryGrid({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={TRANSITION}
+      transition={GALLERY_MODAL_VIEW_TRANSITION}
     >
       <div className="mb-4 flex shrink-0 justify-end">
         <motion.button
           type="button"
           onClick={onClose}
           className="cursor-pointer text-sm font-medium uppercase tracking-wide text-foreground"
-          whileTap={{ scale: 0.97 }}
+          whileTap={{ scale: TAP_SCALE }}
         >
           {t('nav.close', locale)}
         </motion.button>

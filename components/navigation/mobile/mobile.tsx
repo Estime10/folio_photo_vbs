@@ -4,6 +4,7 @@ import { useState, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { t } from '@/lib/i18n/i18n';
 import type { Locale } from '@/lib/i18n/messages/messages';
+import { TAP_SCALE } from '@/lib/config/animations';
 import {
   MobileMenuDropdown,
   type MobileMenuDropdownRef,
@@ -32,7 +33,7 @@ export function MobileNav({ locale }: MobileNavProps) {
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={isOpen ? t('nav.close', locale) : 'Ouvrir le menu'}
-        whileTap={{ scale: 0.97 }}
+        whileTap={{ scale: TAP_SCALE }}
       >
         {isOpen ? t('nav.close', locale) : 'Menu'}
       </motion.button>

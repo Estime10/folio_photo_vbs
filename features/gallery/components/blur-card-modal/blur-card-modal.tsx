@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { Locale } from '@/lib/i18n/messages/messages';
-import { EASE_POWER2_OUT_CUBIC_BEZIER, GALLERY_SCROLL_REVEAL } from '@/lib/config/animations';
+import { GALLERY_MODAL_VIEW_TRANSITION, GALLERY_SCROLL_REVEAL } from '@/lib/config/animations';
 import { portfolioByCategory } from '@/lib/images/images';
 import type { PortfolioCategory } from '@/types/portfolio';
 import { distributeInColumns } from '@/features/gallery/lib/distribute-in-columns';
@@ -12,7 +12,7 @@ import { BlurCardModalCardsView } from './components/blur-card-modal-cards-view'
 
 const MODAL_TRANSITION = {
   duration: GALLERY_SCROLL_REVEAL.modalFadeInDuration,
-  ease: EASE_POWER2_OUT_CUBIC_BEZIER,
+  ease: GALLERY_MODAL_VIEW_TRANSITION.ease,
 } as const;
 
 type BlurCardModalProps = {
