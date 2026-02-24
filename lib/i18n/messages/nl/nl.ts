@@ -6,6 +6,7 @@ export const nl = {
   'common.error': 'Er is een fout opgetreden.',
   'nav.home': 'Home',
   'nav.gallery': 'Galerij',
+  'gallery.surtitle': 'Waar emoties vorm krijgen',
   'nav.story': 'Verhaal',
   'story.surtitle': 'De mens achter de lens',
   'story.title.who': 'Wie ben ik',

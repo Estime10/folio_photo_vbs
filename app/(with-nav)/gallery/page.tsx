@@ -5,6 +5,9 @@ import type { GalleryContent } from '@/types/gallery';
 
 export default async function GalleryPage() {
   const locale = await getLocaleFromRequest();
-  const content: GalleryContent = { title: t('nav.gallery', locale) };
+  const content: GalleryContent = {
+    surtitle: t('gallery.surtitle', locale),
+    title: t('nav.gallery', locale),
+  };
   return <Gallery content={content} />;
 }

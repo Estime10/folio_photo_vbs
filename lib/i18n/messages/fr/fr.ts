@@ -6,6 +6,7 @@ export const fr = {
   'common.error': 'Une erreur est survenue.',
   'nav.home': 'Accueil',
   'nav.gallery': 'Galerie',
+  'gallery.surtitle': 'Là où les émotions prennent forme',
   'nav.story': 'Histoire',
   'story.surtitle': "L'humain derrière l'objectif",
   'story.title.who': 'Qui suis-je',

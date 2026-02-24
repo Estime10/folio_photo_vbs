@@ -1,5 +1,6 @@
 import { BlurCard } from '@/components/blur-card/blur-card';
 import { Container } from '@/components/container/container';
+import { GalleryHeader } from './components/gallery-header/gallery-header';
 import type { GalleryContent } from '@/types/gallery';
 
 type GalleryProps = {
@@ -7,14 +8,11 @@ type GalleryProps = {
 };
 
 export function Gallery({ content }: GalleryProps) {
-  const { title } = content;
   return (
     <Container>
       <BlurCard className="flex h-full w-full min-h-0 flex-col">
-        <div className="p-(--container-padding-x)">
-          <h1 className="text-left text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-            {title}
-          </h1>
+        <div className="flex flex-col p-(--container-padding-x)">
+          <GalleryHeader content={content} />
         </div>
       </BlurCard>
     </Container>

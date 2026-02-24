@@ -6,6 +6,7 @@ export const en = {
   'common.error': 'An error occurred.',
   'nav.home': 'Home',
   'nav.gallery': 'Gallery',
+  'gallery.surtitle': 'Where emotions take shape',
   'nav.story': 'Story',
   'story.surtitle': 'The human behind the lens',
   'story.title.who': 'Who I am',
