@@ -28,3 +28,11 @@ export const portfolioCategories: readonly PortfolioCategory[] = [
   'fitness',
   'lifestyle',
 ];
+
+/** Liste plate de toutes les images du portfolio (toutes catégories). Pour la galerie full. */
+export const allPortfolioImages: readonly PortfolioImage[] = [
+  ...basketballImages,
+  ...brandImages,
+  ...fitnessImages,
+  ...lifestyleImages,
+];

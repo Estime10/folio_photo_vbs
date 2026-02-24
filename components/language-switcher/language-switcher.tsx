@@ -21,7 +21,7 @@ type LanguageSwitcherProps = {
 };
 
 const itemBase =
-  'px-3 py-1.5 text-sm font-medium transition-colors rounded lg:hover:bg-foreground/5';
+  'px-3 py-1.5 text-sm font-medium transition-colors rounded cursor-default lg:cursor-pointer lg:hover:bg-foreground/5';
 const activeClass =
   'cursor-default rounded-lg bg-foreground/10 text-foreground/70 lg:hover:bg-foreground/10';
 
@@ -81,7 +81,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center justify-center rounded outline-none ring-foreground/20 focus:ring-2"
+        className="flex cursor-default items-center justify-center rounded outline-none ring-foreground/20 focus:ring-2 lg:cursor-pointer"
         aria-expanded={open}
         aria-label="Changer la langue"
       >
