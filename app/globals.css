@@ -52,6 +52,20 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/** Grille miniatures home : taille stable (évite hydration mismatch avec Tailwind arbitrary). */
+.home-miniature-grid-box {
+  position: relative;
+  flex-shrink: 0;
+  height: min(100cqh, 100cqw);
+  width: min(100cqh, 100cqw);
+}
+@media (min-width: 1280px) {
+  .home-miniature-grid-box {
+    height: min(88cqh, 88cqw);
+    width: min(88cqh, 88cqw);
+  }
+}
+
 /** Anneau focus accessible (liens, boutons). */
 .focus-ring {
   outline: none;

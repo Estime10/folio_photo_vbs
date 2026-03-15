@@ -11,7 +11,7 @@ type HomeHeroCtaProps = {
 export function HomeHeroCta({ content, onContactClick }: HomeHeroCtaProps) {
   const { ctaGalleryLabel, ctaContactLabel } = content;
   return (
-    <div className="mt-6 p-(--container-padding-x) lg:mt-8">
+    <div className="mt-6 p-(--container-padding-x) lg:mt-8 xl:-mt-[1.25rem]">
       <HomeCtaButtons
         galleryLabel={ctaGalleryLabel}
         contactLabel={ctaContactLabel}

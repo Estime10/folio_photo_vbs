@@ -39,7 +39,7 @@ export function HomeMiniatureItems() {
 
   return (
     <div className="flex h-full w-full items-center justify-center p-3 @container/size">
-      <div className="relative h-[min(100cqh,100cqw)] w-[min(100cqh,100cqw)] shrink-0">
+      <div className="home-miniature-grid-box">
         <HomeMiniatureGridSkeleton visible={images.length === 0 || !allLoaded} />
         {images.length > 0 && (
           <div className={GRID_CLASSES}>
