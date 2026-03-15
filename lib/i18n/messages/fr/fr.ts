@@ -69,4 +69,11 @@ Elle existe déjà, là, dans l'âme de celui ou celle qui se tient de l'autre c
   'meta.description': 'Portfolio photographique',
   'meta.home.title': 'Photo Vibes By Shana — Portfolio',
   'meta.home.description': 'Portfolio photographique par Shana.',
+  'meta.gallery.title': 'Galerie — Photo Vibes By Shana',
+  'meta.gallery.description':
+    'Galerie photographique : basketball, branding, fitness, instantanés.',
+  'meta.story.title': 'Histoire — Photo Vibes By Shana',
+  'meta.story.description': 'Vision et passion photographiques.',
+  'meta.contact.title': 'Contact — Photo Vibes By Shana',
+  'meta.contact.description': 'Contactez Shana pour vos projets photo.',
 } as const;

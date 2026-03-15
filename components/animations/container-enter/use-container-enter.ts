@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { PAGE_ENTER } from '@/lib/config/animations';
+import { PAGE_ENTER } from '@/lib/config';
 
 /**
  * Anime le container du bas vers le haut (y: 100% → 0) avec fade in (opacity 0 → 1).

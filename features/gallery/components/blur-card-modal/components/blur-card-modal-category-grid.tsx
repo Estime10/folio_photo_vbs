@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { t } from '@/lib/i18n/i18n';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { GALLERY_MODAL_VIEW_TRANSITION, TAP_SCALE } from '@/lib/config/animations';
-import type { PortfolioCategory } from '@/types/portfolio';
+import { type Locale, t } from '@/lib/i18n';
+import { GALLERY_MODAL_VIEW_TRANSITION, TAP_SCALE } from '@/lib/config';
+import type { PortfolioCategory } from '@/types';
 import type { GalleryColumnItem } from '@/features/gallery/lib/distribute-in-columns';
+import { GALLERY_GRID_SECTION_CLASSES } from '@/features/gallery/lib/distribute-in-columns';
 import { GalleryColumn } from '@/features/gallery/components/gallery-full-images/gallery-column/gallery-column';
 import { BLUR_CARD_MODAL_CARDS } from '@/features/gallery/components/blur-card-modal/blur-card-modal.constants';
 
@@ -49,7 +49,7 @@ export function BlurCardModalCategoryGrid({
         </motion.button>
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto">
-        <section className="grid w-full grid-cols-3 gap-0.5" aria-label={t(titleKey, locale)}>
+        <section className={GALLERY_GRID_SECTION_CLASSES} aria-label={t(titleKey, locale)}>
           {columns.map((items, colIndex) => (
             <GalleryColumn key={colIndex} items={items} />
           ))}

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { PAGE_ENTER } from '@/lib/config/animations';
+import { PAGE_ENTER } from '@/lib/config';
 
 /**
  * Anime le header de haut vers le bas (y: -100% → 0) avec fade in (opacity 0 → 1).

@@ -1,8 +1,10 @@
-import { t } from '@/lib/i18n/i18n';
-import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
-import { CONTACT } from '@/lib/config/contact';
+import { createPageMetadata, getLocaleFromRequest } from '@/lib/i18n/server';
+import { t } from '@/lib/i18n';
+import { CONTACT } from '@/lib/config';
 import { Contact } from '@/features/contact/Contact';
-import type { ContactContent } from '@/types/contact';
+import type { ContactContent } from '@/types';
+
+export const generateMetadata = () => createPageMetadata('contact');
 
 export default async function ContactPage() {
   const locale = await getLocaleFromRequest();

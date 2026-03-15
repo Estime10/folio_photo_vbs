@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { getShuffledTestimonials, testimonialsFakeData } from '@/lib/data/testimonials';
-import type { Testimonial } from '@/types/testimonial';
-import { TESTIMONIAL_CAROUSEL } from '@/lib/config/animations';
+import type { Testimonial } from '@/types';
+import { TESTIMONIAL_CAROUSEL } from '@/lib/config';
 
 export type UseTestimonialCarouselReturn = {
   shuffled: Testimonial[];

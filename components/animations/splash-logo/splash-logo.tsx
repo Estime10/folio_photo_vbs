@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { SPLASH_LOGO } from '@/lib/config/animations';
+import { SPLASH_LOGO } from '@/lib/config';
 
 type SplashLogoProps = {
   text: string;

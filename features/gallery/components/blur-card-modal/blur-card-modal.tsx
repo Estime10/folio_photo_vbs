@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { GALLERY_MODAL_VIEW_TRANSITION, GALLERY_SCROLL_REVEAL } from '@/lib/config/animations';
-import { portfolioByCategory } from '@/lib/images/images';
-import type { PortfolioCategory } from '@/types/portfolio';
+import type { Locale } from '@/lib/i18n';
+import { GALLERY_MODAL_VIEW_TRANSITION, GALLERY_SCROLL_REVEAL } from '@/lib/config';
+import { portfolioByCategory } from '@/lib/images';
+import type { PortfolioCategory } from '@/types';
 import { distributeInColumns } from '@/features/gallery/lib/distribute-in-columns';
 import { BlurCardModalCategoryGrid } from './components/blur-card-modal-category-grid';
 import { BlurCardModalCardsView } from './components/blur-card-modal-cards-view';

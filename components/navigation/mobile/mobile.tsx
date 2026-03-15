@@ -2,9 +2,8 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { t } from '@/lib/i18n/i18n';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { TAP_SCALE } from '@/lib/config/animations';
+import { type Locale, t } from '@/lib/i18n';
+import { TAP_SCALE } from '@/lib/config';
 import {
   MobileMenuDropdown,
   type MobileMenuDropdownRef,

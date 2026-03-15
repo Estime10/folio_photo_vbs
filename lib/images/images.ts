@@ -1,4 +1,4 @@
-import type { PortfolioCategory, PortfolioImage } from '@/types/portfolio';
+import type { PortfolioCategory, PortfolioImage } from '@/types';
 import { basketballImages } from '@/lib/images/basketball/basketball';
 import { brandImages } from '@/lib/images/brand/brand';
 import { fitnessImages } from '@/lib/images/fitness/fitness';

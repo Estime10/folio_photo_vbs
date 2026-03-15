@@ -1,4 +1,4 @@
-import type { Testimonial, TestimonialLocale } from '@/types/testimonial';
+import type { Testimonial, TestimonialLocale } from '@/types';
 
 type FooterTestimonialCardProps = {
   testimonial: Testimonial;
@@ -19,7 +19,10 @@ export function FooterTestimonialCard({ testimonial, locale }: FooterTestimonial
           <p className="truncate text-base font-medium text-foreground">{username}</p>
           <p className="truncate text-sm text-foreground/70">{jobText}</p>
         </div>
-        <p className="shrink-0 text-base font-medium text-foreground" aria-label={`Note : ${rating} sur ${MAX_RATING}`}>
+        <p
+          className="shrink-0 text-base font-medium text-foreground"
+          aria-label={`Note : ${rating} sur ${MAX_RATING}`}
+        >
           {rating}/{MAX_RATING}
         </p>
       </div>

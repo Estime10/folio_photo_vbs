@@ -3,7 +3,7 @@
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BlurCard } from '@/components/blur-card/blur-card';
-import { FADE_SLIDE_UP_VARIANTS, TAP_SCALE } from '@/lib/config/animations';
+import { FADE_SLIDE_UP_VARIANTS, TAP_SCALE } from '@/lib/config';
 
 type IconProps = { className?: string; 'aria-hidden'?: boolean };
 

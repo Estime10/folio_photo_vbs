@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import type { PortfolioImage } from '@/types/portfolio';
-import { basketballImages, brandImages, fitnessImages, lifestyleImages } from '@/lib/images/images';
+import type { PortfolioImage } from '@/types';
+import { basketballImages, brandImages, fitnessImages, lifestyleImages } from '@/lib/images';
 import { shuffleRandom } from '@/lib/utils/seeded-shuffle';
 import { HomeMiniatureGridSkeleton } from './home-miniature-grid-skeleton';
 

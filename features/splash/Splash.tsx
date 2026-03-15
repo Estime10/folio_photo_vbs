@@ -7,9 +7,9 @@ import gsap from 'gsap';
 import { SplashLogo } from '@/components/animations/splash-logo/splash-logo';
 import { useSplashZoom } from '@/components/animations/splash-zoom/use-splash-zoom';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
-import { ROUTES } from '@/lib/navigation-routes/routes/routes';
-import { profileImagesBg } from '@/lib/images/profile/profile';
-import { SPLASH } from '@/lib/config/animations';
+import { ROUTES } from '@/lib/navigation-routes';
+import { profileImagesBg } from '@/lib/images';
+import { SPLASH } from '@/lib/config';
 
 export function Splash() {
   const router = useRouter();

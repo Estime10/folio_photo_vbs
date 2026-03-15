@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { SPLASH } from '@/lib/config/animations';
+import { SPLASH } from '@/lib/config';
 
 type UseSplashZoomParams = {
   wrapperRef: React.RefObject<HTMLDivElement | null>;

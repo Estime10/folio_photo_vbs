@@ -1,4 +1,4 @@
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 
 const RUN2_FILES = [
   '11.jpeg',

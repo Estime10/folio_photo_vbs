@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { TAP_SCALE } from '@/lib/config/animations';
-import { ROUTES } from '@/lib/navigation-routes/routes/routes';
+import { TAP_SCALE } from '@/lib/config';
+import { ROUTES } from '@/lib/navigation-routes';
 
 type HomeCtaButtonsProps = {
   galleryLabel: string;

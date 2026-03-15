@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Container } from '@/components/container/container';
-import { FADE_SLIDE_UP } from '@/lib/config/animations';
-import type { ContactContent } from '@/types/contact';
+import { FADE_SLIDE_UP } from '@/lib/config';
+import type { ContactContent } from '@/types';
 import { ContactChannelCard } from './components/contact-channel-card';
 
 type ContactProps = {

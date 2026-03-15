@@ -1,7 +1,7 @@
 import { BlurCard } from '@/components/blur-card/blur-card';
 import { Container } from '@/components/container/container';
 import { StoryHeader } from './components/story-header/story-header';
-import type { StoryContent } from '@/types/story';
+import type { StoryContent } from '@/types';
 
 type StoryProps = {
   content: StoryContent;

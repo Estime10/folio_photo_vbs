@@ -1,6 +1,6 @@
 'use client';
 
-import type { TestimonialLocale } from '@/types/testimonial';
+import type { TestimonialLocale } from '@/types';
 import { useTestimonialCarousel } from '@/components/animations/testimonial-carousel/use-testimonial-carousel';
 import { FooterArrow } from './components/footer-arrow/footer-arrow';
 import { FooterTestimonialCard } from './components/footer-testimonial-card/footer-testimonial-card';

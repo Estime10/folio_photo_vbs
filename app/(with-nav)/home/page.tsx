@@ -1,16 +1,9 @@
-import type { Metadata } from 'next';
-import { t } from '@/lib/i18n/i18n';
-import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
+import { createPageMetadata, getLocaleFromRequest } from '@/lib/i18n/server';
+import { t } from '@/lib/i18n';
 import { Home } from '@/features/home/Home';
-import type { HomeContent } from '@/types/home';
+import type { HomeContent } from '@/types';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocaleFromRequest();
-  return {
-    title: t('meta.home.title', locale),
-    description: t('meta.home.description', locale),
-  };
-}
+export const generateMetadata = () => createPageMetadata('home');
 
 export default async function HomePage() {
   const locale = await getLocaleFromRequest();

@@ -3,8 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useRef, useState, useCallback, useEffect } from 'react';
 import { Globe } from 'lucide-react';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
+import { type Locale, LOCALE_COOKIE_NAME } from '@/lib/i18n';
 
 const LOCALES: { value: Locale; label: string }[] = [
   { value: 'fr', label: 'FR' },

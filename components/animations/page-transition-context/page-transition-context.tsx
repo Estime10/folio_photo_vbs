@@ -3,7 +3,7 @@
 import { createContext, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
-import { PAGE_EXIT } from '@/lib/config/animations';
+import { PAGE_EXIT } from '@/lib/config';
 
 export type PageTransitionContextValue = {
   runExitThenNavigate: (href: string) => void;

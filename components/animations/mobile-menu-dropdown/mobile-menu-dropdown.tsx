@@ -5,11 +5,9 @@ import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import { t } from '@/lib/i18n/i18n';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { LOCALE_COOKIE_NAME } from '@/lib/i18n/locale/locale';
+import { type Locale, LOCALE_COOKIE_NAME, t } from '@/lib/i18n';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
-import { MOBILE_MENU, TAP_SCALE } from '@/lib/config/animations';
+import { MOBILE_MENU, TAP_SCALE } from '@/lib/config';
 import { TransitionLink } from '@/components/animations/transition-link/transition-link';
 
 const LOCALES: { value: Locale; label: string }[] = [

@@ -1,4 +1,4 @@
-import type { GalleryContent } from '@/types/gallery';
+import type { GalleryContent } from '@/types';
 import { TitleBlock } from '@/components/ui/title-block';
 
 type GalleryHeaderProps = {

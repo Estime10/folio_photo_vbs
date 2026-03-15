@@ -1,4 +1,4 @@
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 import { run1Images } from '@/lib/images/basketball/run1';
 import { run2Images } from '@/lib/images/basketball/run2';
 import { run3Images } from '@/lib/images/basketball/run3';

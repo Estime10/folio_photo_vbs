@@ -1,4 +1,4 @@
-import type { Locale } from '@/lib/i18n/messages/messages';
+import type { Locale } from '@/lib/i18n';
 import { DesktopNav } from '@/components/navigation/desktop/desktop';
 import { MobileNav } from '@/components/navigation/mobile/mobile';
 

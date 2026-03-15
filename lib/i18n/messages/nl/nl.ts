@@ -69,4 +69,10 @@ Ze bestaat al, daar, in de ziel van degene die aan de andere kant van de lens st
   'meta.description': 'Fotografisch portfolio',
   'meta.home.title': 'Photo Vibes By Shana — Portfolio',
   'meta.home.description': 'Fotografisch portfolio door Shana.',
+  'meta.gallery.title': 'Galerij — Photo Vibes By Shana',
+  'meta.gallery.description': 'Fotogalerij: basketbal, branding, fitness, momenten.',
+  'meta.story.title': 'Verhaal — Photo Vibes By Shana',
+  'meta.story.description': 'Visie en passie voor fotografie.',
+  'meta.contact.title': 'Contact — Photo Vibes By Shana',
+  'meta.contact.description': 'Neem contact op met Shana voor je fotoprojecten.',
 } as const;

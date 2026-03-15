@@ -1,9 +1,10 @@
 'use client';
 
-import type { GalleryColumnItem } from '@/features/gallery/lib/distribute-in-columns';
+import {
+  GALLERY_GRID_GAP,
+  type GalleryColumnItem,
+} from '@/features/gallery/lib/distribute-in-columns';
 import { GalleryImageCell } from '../gallery-image-cell/gallery-image-cell';
-
-const GAP = 'gap-0.5';
 
 type GalleryColumnProps = {
   items: GalleryColumnItem[];
@@ -11,7 +12,7 @@ type GalleryColumnProps = {
 
 export function GalleryColumn({ items }: GalleryColumnProps) {
   return (
-    <div className={`flex flex-col ${GAP}`}>
+    <div className={`flex flex-col ${GALLERY_GRID_GAP}`}>
       {items.map(({ image }) => (
         <GalleryImageCell key={`${image.src}-${image.name}`} image={image} />
       ))}

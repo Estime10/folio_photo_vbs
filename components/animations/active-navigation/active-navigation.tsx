@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ACTIVE_NAVIGATION } from '@/lib/config/animations';
+import { ACTIVE_NAVIGATION } from '@/lib/config';
 
 type ActiveNavigationProps = {
   linkRefs: React.RefObject<(HTMLElement | null)[]>;
@@ -29,8 +29,8 @@ export function ActiveNavigation({ linkRefs, activeIndex }: ActiveNavigationProp
   return (
     <span
       ref={underlineRef}
-className="absolute bottom-0 left-0 z-0 h-px w-0 bg-foreground"
-        aria-hidden
+      className="absolute bottom-0 left-0 z-0 h-px w-0 bg-foreground"
+      aria-hidden
     />
   );
 }

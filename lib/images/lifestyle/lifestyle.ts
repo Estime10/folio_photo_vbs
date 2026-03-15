@@ -1,4 +1,4 @@
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 
 const LIFESTYLE_FILES = [
   '1png.png',

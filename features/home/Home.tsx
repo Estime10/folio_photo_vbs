@@ -1,4 +1,4 @@
-import type { Locale } from '@/lib/i18n/messages/messages';
+import type { Locale } from '@/lib/i18n';
 import { BlurCard } from '@/components/blur-card/blur-card';
 import { Container } from '@/components/container/container';
 import { HomeImage } from './components/home-image/home-image';
@@ -7,7 +7,7 @@ import { HomeHero } from './components/home-hero/home-hero';
 import { HomeMobileFooter } from './components/home-mobile/home-mobile-footer/home-mobile-footer';
 import { HomeMobileHeader } from './components/home-mobile/home-mobile-header/home-mobile-header';
 import { HomeMiniatures } from './components/home-miniatures/home-miniatures';
-import type { HomeContent } from '@/types/home';
+import type { HomeContent } from '@/types';
 
 type HomeProps = {
   locale: Locale;

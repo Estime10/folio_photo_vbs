@@ -69,4 +69,10 @@ It already exists, there, in the soul of the one who stands on the other side of
   'meta.description': 'Photography portfolio',
   'meta.home.title': 'Photo Vibes By Shana — Portfolio',
   'meta.home.description': 'Photography portfolio by Shana.',
+  'meta.gallery.title': 'Gallery — Photo Vibes By Shana',
+  'meta.gallery.description': 'Photo gallery: basketball, branding, fitness, moments.',
+  'meta.story.title': 'Story — Photo Vibes By Shana',
+  'meta.story.description': 'Vision and passion for photography.',
+  'meta.contact.title': 'Contact — Photo Vibes By Shana',
+  'meta.contact.description': 'Get in touch with Shana for your photo projects.',
 } as const;

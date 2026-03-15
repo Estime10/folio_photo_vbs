@@ -1,4 +1,4 @@
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 
 const PROFILE_FILE = 'profile.jpeg' as const;
 const PROFILE_FILE_TOP = 'profile_top.jpg' as const;

@@ -2,7 +2,7 @@
 
 import { useRef, useContext } from 'react';
 import { usePathname } from 'next/navigation';
-import type { Locale } from '@/lib/i18n/messages/messages';
+import type { Locale } from '@/lib/i18n';
 import { logoNav } from '@/components/navigation/navigation-item/navigation-items';
 import { Navigation } from '@/components/navigation/navigation';
 import { LanguageSwitcher } from '@/components/language-switcher/language-switcher';

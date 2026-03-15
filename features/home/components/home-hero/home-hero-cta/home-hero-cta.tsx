@@ -1,6 +1,6 @@
 'use client';
 
-import type { HomeContent } from '@/types/home';
+import type { HomeContent } from '@/types';
 import { HomeCtaButtons } from '@/features/home/components/home-cta-buttons/home-cta-buttons';
 
 type HomeHeroCtaProps = {

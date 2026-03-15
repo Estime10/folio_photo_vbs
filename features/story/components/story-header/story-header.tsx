@@ -1,6 +1,6 @@
-import type { StoryContent } from '@/types/story';
+import type { StoryContent } from '@/types';
 import { TitleBlock } from '@/components/ui/title-block';
-import { GLASS_CLASSES } from '@/components/blur-card/blur-card';
+import { GLASS_CLASSES } from '@/components/blur-card/glass-classes';
 import { StoryBodyText } from '../story-body-text/story-body-text';
 
 const STORY_CARD_CLASSES = `${GLASS_CLASSES} flex min-w-0 flex-col p-(--container-padding-x) lg:min-h-0 lg:flex-1 lg:overflow-hidden`;

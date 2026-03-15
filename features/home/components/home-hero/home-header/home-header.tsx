@@ -1,4 +1,4 @@
-import type { HomeContent } from '@/types/home';
+import type { HomeContent } from '@/types';
 import { TitleBlock } from '@/components/ui/title-block';
 
 type HomeHeaderProps = {

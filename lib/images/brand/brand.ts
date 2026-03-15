@@ -1,4 +1,4 @@
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 
 const BRAND_FILES = ['1.jpeg', '2.png'] as const;
 

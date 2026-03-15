@@ -1,4 +1,4 @@
-import { ROUTES } from '@/lib/navigation-routes/routes/routes';
+import { ROUTES } from '@/lib/navigation-routes';
 
 export const navigationItems = [
   { href: ROUTES.home, key: 'nav.home' },

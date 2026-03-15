@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist_Mono, Syne } from 'next/font/google';
-import { t } from '@/lib/i18n/i18n';
-import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
+import { getLocaleFromRequest } from '@/lib/i18n/server';
+import { t } from '@/lib/i18n';
 import './globals.css';
 
 const syne = Syne({

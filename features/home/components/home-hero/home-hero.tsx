@@ -1,4 +1,4 @@
-import type { HomeContent } from '@/types/home';
+import type { HomeContent } from '@/types';
 import { HomeHeader } from './home-header/home-header';
 import { HomeHeroCta } from './home-hero-cta/home-hero-cta';
 

@@ -1,7 +1,9 @@
-import { t } from '@/lib/i18n/i18n';
-import { getLocaleFromRequest } from '@/lib/i18n/get-locale-from-request/get-locale-from-request';
+import { createPageMetadata, getLocaleFromRequest } from '@/lib/i18n/server';
+import { t } from '@/lib/i18n';
 import { Story } from '@/features/story/Story';
-import type { StoryContent } from '@/types/story';
+import type { StoryContent } from '@/types';
+
+export const generateMetadata = () => createPageMetadata('story');
 
 export default async function StoryPage() {
   const locale = await getLocaleFromRequest();

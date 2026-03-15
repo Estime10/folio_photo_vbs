@@ -1,4 +1,4 @@
-import type { Testimonial } from '@/types/testimonial';
+import type { Testimonial } from '@/types';
 import { shuffleRandom } from '@/lib/utils/seeded-shuffle';
 
 export const testimonialsFakeData: readonly Testimonial[] = [
@@ -13,7 +13,7 @@ export const testimonialsFakeData: readonly Testimonial[] = [
     description: {
       fr: "Un vrai professionnel, à l'écoute et créatif. Les photos ont dépassé nos attentes pour la campagne.",
       en: 'A real professional, attentive and creative. The photos exceeded our expectations for the campaign.',
-      nl: 'Een echte professional, attent en creatief. De foto\'s overtroffen onze verwachtingen voor de campagne.',
+      nl: "Een echte professional, attent en creatief. De foto's overtroffen onze verwachtingen voor de campagne.",
     },
     rating: 5,
   },

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useCallback } from 'react';
-import type { PortfolioImage } from '@/types/portfolio';
+import type { PortfolioImage } from '@/types';
 
 type GalleryImageCellProps = {
   image: PortfolioImage;

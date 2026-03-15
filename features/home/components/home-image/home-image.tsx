@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { profileImages } from '@/lib/images/profile/profile';
+import { profileImages } from '@/lib/images';
 
 export function HomeImage() {
   return (

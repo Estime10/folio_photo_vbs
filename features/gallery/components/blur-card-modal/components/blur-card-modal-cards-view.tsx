@@ -2,10 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { BlurCard } from '@/components/blur-card/blur-card';
-import { t } from '@/lib/i18n/i18n';
-import type { Locale } from '@/lib/i18n/messages/messages';
-import { GALLERY_MODAL_VIEW_TRANSITION, TAP_SCALE } from '@/lib/config/animations';
-import type { PortfolioCategory } from '@/types/portfolio';
+import { type Locale, t } from '@/lib/i18n';
+import { GALLERY_MODAL_VIEW_TRANSITION, TAP_SCALE } from '@/lib/config';
+import type { PortfolioCategory } from '@/types';
 import { BlurCardModalImage } from '@/features/gallery/components/blur-card-modal/components/blur-card-modal-image/blur-card-modal-image';
 import { BLUR_CARD_MODAL_CARDS } from '@/features/gallery/components/blur-card-modal/blur-card-modal.constants';
 

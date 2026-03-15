@@ -2,8 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { useRef } from 'react';
-import { t } from '@/lib/i18n/i18n';
-import type { Locale } from '@/lib/i18n/messages/messages';
+import { type Locale, t } from '@/lib/i18n';
 import { navigationItems } from '@/components/navigation/navigation-item/navigation-items';
 import { ActiveNavigation } from '@/components/animations/active-navigation/active-navigation';
 import { TransitionLink } from '@/components/animations/transition-link/transition-link';

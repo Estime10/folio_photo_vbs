@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useContext, forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { TAP_SCALE } from '@/lib/config/animations';
+import { TAP_SCALE } from '@/lib/config';
 import { PageTransitionContext } from '@/components/animations/page-transition-context/page-transition-context';
 
 type TransitionLinkProps = Omit<React.ComponentProps<typeof Link>, 'href'> & {

@@ -1,4 +1,4 @@
-import type { PortfolioCategory } from '@/types/portfolio';
+import type { PortfolioCategory } from '@/types';
 
 /** Clé i18n pour le titre d'une card de la modale galerie. */
 export const MODAL_CARD_TITLE_KEYS = [
