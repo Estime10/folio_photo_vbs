@@ -33,7 +33,7 @@ export function BlurCardModal({ locale }: BlurCardModalProps) {
 
   return (
     <motion.div
-      className="fixed inset-x-0 bottom-0 top-0 z-50 flex min-h-full flex-col items-start justify-center overflow-y-auto bg-background/80 backdrop-blur-sm lg:items-center"
+      className="fixed inset-0 z-50 flex h-dvh max-h-dvh flex-col items-start justify-start overflow-y-auto bg-background/80 backdrop-blur-sm lg:items-center lg:justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={MODAL_TRANSITION}

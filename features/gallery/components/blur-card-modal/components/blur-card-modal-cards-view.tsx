@@ -19,31 +19,38 @@ type BlurCardModalCardsViewProps = {
  */
 export function BlurCardModalCardsView({ locale, onSelectCategory }: BlurCardModalCardsViewProps) {
   return (
-    <motion.div
-      key="cards"
-      className="grid w-full max-w-full grid-cols-1 gap-4 p-(--container-padding-x) lg:mt-6 xl:mt-0 md:max-w-xl lg:max-w-none lg:grid-cols-2 xl:grid-cols-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={GALLERY_MODAL_VIEW_TRANSITION}
-    >
-      {BLUR_CARD_MODAL_CARDS.map((card) => (
-        <motion.button
-          key={card.titleKey}
-          type="button"
-          onClick={() => onSelectCategory(card.category)}
-          className="block w-full min-w-0 cursor-default text-left xl:cursor-pointer [border:none] [background:transparent] p-0"
-        >
-          <motion.div className="h-full w-full" whileTap={{ scale: TAP_SCALE }}>
-            <BlurCard className="flex min-h-0 flex-col">
-              <header className="shrink-0 px-4 py-3 text-foreground uppercase">
-                {t(card.titleKey, locale)}
-              </header>
-              <BlurCardModalImage src={card.imageSrc} alt={t(card.titleKey, locale)} />
-            </BlurCard>
-          </motion.div>
-        </motion.button>
-      ))}
-    </motion.div>
+    <div key="cards-wrapper" className="w-full shrink-0 lg:contents">
+      <motion.div
+        key="cards"
+        className="grid w-full max-w-full grid-cols-1 gap-4 p-(--container-padding-x) py-6 pb-[max(3rem,calc(2rem+env(safe-area-inset-bottom,0px)))] lg:mt-6 lg:py-0 lg:pb-0 xl:mt-0 md:max-w-xl lg:max-w-none lg:grid-cols-2 xl:grid-cols-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={GALLERY_MODAL_VIEW_TRANSITION}
+      >
+        {BLUR_CARD_MODAL_CARDS.map((card) => (
+          <motion.button
+            key={card.titleKey}
+            type="button"
+            onClick={() => onSelectCategory(card.category)}
+            className="block w-full min-w-0 cursor-default text-left xl:cursor-pointer [border:none] [background:transparent] p-0"
+          >
+            <motion.div className="h-full w-full" whileTap={{ scale: TAP_SCALE }}>
+              <BlurCard className="flex min-h-0 flex-col">
+                <header className="shrink-0 px-4 py-3 text-foreground uppercase">
+                  {t(card.titleKey, locale)}
+                </header>
+                <BlurCardModalImage src={card.imageSrc} alt={t(card.titleKey, locale)} />
+              </BlurCard>
+            </motion.div>
+          </motion.button>
+        ))}
+      </motion.div>
+      {/* Spacer pour garantir la visibilité du bas au scroll sur mobile */}
+      <div
+        className="min-h-[max(3rem,calc(2rem+env(safe-area-inset-bottom,0px)))] w-full lg:hidden"
+        aria-hidden
+      />
+    </div>
   );
 }
