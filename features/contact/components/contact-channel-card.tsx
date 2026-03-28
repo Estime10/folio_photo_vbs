@@ -23,9 +23,9 @@ function InstagramIcon({ className, ...props }: IconProps) {
       className={className}
       {...props}
     >
-      <rect x="2" y="2" width="20" height="20" rx="5" />
-      <path d="M16 11.37a4 4 0 1 1-4.913-4.913" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
     </svg>
   );
 }
