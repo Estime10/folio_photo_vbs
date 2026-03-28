@@ -12,6 +12,7 @@ export const nl = {
   'gallery.modal.card.captureMoment': 'Het moment vastleggen',
   'gallery.modal.card.views': 'Beelden',
   'gallery.modal.card.fitness': 'Fitness',
+  'gallery.lightbox.ariaLabel': 'Foto op volledig scherm',
   'nav.story': 'Verhaal',
   'story.surtitle': 'De mens achter de lens',
   'story.title.who': 'Wie ben ik',

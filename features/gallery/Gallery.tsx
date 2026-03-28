@@ -28,7 +28,7 @@ export function Gallery({ content, locale }: GalleryProps) {
               className="mt-6 min-h-0 flex-1 overflow-y-auto"
               onRevealComplete={() => setShowModal(true)}
             >
-              <GalleryFullImages />
+              <GalleryFullImages locale={locale} />
             </GalleryScrollReveal>
           </div>
         </BlurCard>

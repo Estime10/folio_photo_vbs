@@ -12,6 +12,7 @@ export const en = {
   'gallery.modal.card.captureMoment': 'Capture the moment',
   'gallery.modal.card.views': 'Views',
   'gallery.modal.card.fitness': 'Fitness',
+  'gallery.lightbox.ariaLabel': 'Full-screen photo',
   'nav.story': 'Story',
   'story.surtitle': 'The human behind the lens',
   'story.title.who': 'Who I am',

@@ -51,7 +51,7 @@ export function BlurCardModalCategoryGrid({
       <div className="min-h-0 flex-1 overflow-y-auto">
         <section className={GALLERY_GRID_SECTION_CLASSES} aria-label={t(titleKey, locale)}>
           {columns.map((items, colIndex) => (
-            <GalleryColumn key={colIndex} items={items} />
+            <GalleryColumn key={colIndex} items={items} locale={locale} />
           ))}
         </section>
       </div>

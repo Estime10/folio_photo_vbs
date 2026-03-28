@@ -17,6 +17,8 @@ export function useGalleryScrollReveal(
 ): RefObject<HTMLDivElement | null> {
   const scrollRef = useRef<HTMLDivElement>(null);
   const hasRunRef = useRef(false);
+  const onRevealCompleteRef = useRef(onRevealComplete);
+  onRevealCompleteRef.current = onRevealComplete;
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -30,7 +32,7 @@ export function useGalleryScrollReveal(
 
       const tl = gsap.timeline({
         onComplete: () => {
-          onRevealComplete?.();
+          onRevealCompleteRef.current?.();
         },
       });
       tl.to(el, {
@@ -47,7 +49,7 @@ export function useGalleryScrollReveal(
     return () => {
       tween.kill();
     };
-  }, [onRevealComplete]);
+  }, []);
 
   return scrollRef;
 }
